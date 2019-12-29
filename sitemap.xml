@@ -43,6 +43,20 @@
         </url>
     
         <url>
+            <loc>https://WorkingNiu.github.io/2019/12/axios/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://WorkingNiu.github.io/categories/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
@@ -113,6 +127,48 @@
         </url>
     
         <url>
+            <loc>https://WorkingNiu.github.io/tags/typescript/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/categories/typescript/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/2019/12/typescript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://WorkingNiu.github.io/tags/vue/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
@@ -141,7 +197,35 @@
         </url>
     
         <url>
+            <loc>https://WorkingNiu.github.io/2019/12/vue-router/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://WorkingNiu.github.io/2019/12/vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/2019/12/vuex/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -197,7 +281,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+            <loc>https://WorkingNiu.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -211,7 +295,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+            <loc>https://WorkingNiu.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
