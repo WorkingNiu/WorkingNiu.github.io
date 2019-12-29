@@ -252,12 +252,18 @@
     </div>
 </div>
 
-        <div class="post-comment">
+        <div class="post-comment"><div id="vcomments"></div>
+            <script src="/js/lib/valine/Valine.min.min.js"></script>
             
-            
-
-            
-        </div>
+            <script type="text/javascript">
+                new Valine({
+                    el: "#vcomments",
+                    appId: "k5zkK4ob8u4XsdxcFJ3SrrYH-gzGzoHsz",
+                    appKey: "VHtQ2sg8KBIRgTp8F3bu1REf",
+                    avatar: "monsterid",
+                    placeholder: "说点什么吧",
+                });
+            </script></div>
     </article></div>
             </main>
             <footer class="footer">
