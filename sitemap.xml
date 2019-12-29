@@ -3,7 +3,105 @@
         <url>
             <loc>https://WorkingNiu.github.io/categories/</loc>
             
-                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/posts/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/tags/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/categories/vue/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/tags/vue/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/2019/12/vue-%E8%AF%AD%E6%B3%95%E7%AF%87/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -44,48 +142,6 @@
     
         <url>
             <loc>https://WorkingNiu.github.io/2019/08/markdown%E8%AF%AD%E6%B3%95/</loc>
-            
-                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://WorkingNiu.github.io/posts/</loc>
-            
-                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://WorkingNiu.github.io/tags/</loc>
-            
-                <lastmod>2019-08-25T16:22:42+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://WorkingNiu.github.io/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             

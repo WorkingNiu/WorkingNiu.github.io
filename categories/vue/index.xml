@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on WorkingNiu的博客</title>
+    <link>https://WorkingNiu.github.io/categories/vue/</link>
+    <description>Recent content in Vue on WorkingNiu的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 29 Dec 2019 15:01:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://WorkingNiu.github.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue 语法篇</title>
+      <link>https://WorkingNiu.github.io/2019/12/vue-%E8%AF%AD%E6%B3%95%E7%AF%87/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/vue-%E8%AF%AD%E6%B3%95%E7%AF%87/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
