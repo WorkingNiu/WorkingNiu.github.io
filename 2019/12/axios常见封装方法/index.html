@@ -41,7 +41,7 @@
     
         "keywords": "Vue, 前端技术, Axios",
     
-    "wordcount":  785 ,
+    "wordcount":  757 ,
     "url": "https:\/\/WorkingNiu.github.io\/2019\/12\/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95\/",
     
         "datePublished": "2019-12-29T15:01:12\x2b08:00",
@@ -141,7 +141,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-29>2019-12-29</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 785 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 757 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
         </div>
 
@@ -202,9 +202,8 @@
             
             
             
-            <p>参考了几个开源项目，分享一套比较常见的axios二次封装使用方法。</p>
-<p>源码参考 <a href="https://github.com/WorkingNiu/vueskeleton">本人Github</a>。</p>
-<p>示例中使用了restful风格的API，话不多说直接上代码，如有错误欢迎指正。</p>
+            <p>分享一套比较常见的axios二次封装使用方法。</p>
+<p>源码参考 <a href="https://github.com/WorkingNiu/vueskeleton">本人Github</a>，话不多说直接上代码，如有错误欢迎指正。</p>
 <a class="post-dummy-target" id="requestjs"></a><h2>request.js</h2>
 <p>封装axios的工具类，可以放在utils包中，包括前置钩子、后置钩子。这里的baseURL是服务器地址，如http://localhost:8080。</p>
 <div class="highlight"><div class="chroma">
@@ -299,8 +298,7 @@
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">service</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<a class="post-dummy-target" id="test"></a><h2>test.js</h2>
+</div><a class="post-dummy-target" id="test"></a><h2>test.js</h2>
 <p>实际生产中一般对应一组业务请求，例如商品的增删改查，所有请求放在一个js文件里方便管理。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -352,6 +350,7 @@
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">request</span> <span class="nx">from</span> <span class="s1">&#39;@/utils/request&#39;</span>
@@ -402,10 +401,10 @@
     <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;delete&#39;</span><span class="p">,</span>
   <span class="p">}</span><span class="p">)</span>
 <span class="p">}</span>
+
 </code></pre></td></tr></table>
 </div>
-</div>
-<a class="post-dummy-target" id="loginvue"></a><h2>login.vue</h2>
+</div><a class="post-dummy-target" id="loginvue"></a><h2>login.vue</h2>
 <p>实际使用:按需要引入上面的<a href="#test">test.js</a>文件中的方法,如下演示了使用update方法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -437,6 +436,7 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-vue" data-lang="vue"><span class="p">&lt;</span><span class="nt">template</span><span class="p"></span><span class="p">&gt;</span>
@@ -466,7 +466,9 @@
         <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">}</span>
     <span class="p">}</span><span class="p">;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></td></tr></table>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+</code></pre></td></tr></table>
 </div>
 </div>
         </div>

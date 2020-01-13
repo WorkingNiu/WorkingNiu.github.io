@@ -1,18 +1,16 @@
 # Axios常见封装方法
 
 
-参考了几个开源项目，分享一套比较常见的axios二次封装使用方法。
+分享一套比较常见的axios二次封装使用方法。
 
-源码参考 [本人Github](https://github.com/WorkingNiu/vueskeleton)。
-
-示例中使用了restful风格的API，话不多说直接上代码，如有错误欢迎指正。
+源码参考 [本人Github](https://github.com/WorkingNiu/vueskeleton)，话不多说直接上代码，如有错误欢迎指正。
 
 <!--more-->
 ## request.js
 
 封装axios的工具类，可以放在utils包中，包括前置钩子、后置钩子。这里的baseURL是服务器地址，如http://localhost:8080。
 
-{{< highlight javascript  >}}
+```javascript
 import axios from 'axios'
 
 // 创建axios实例
@@ -56,14 +54,13 @@ service.interceptors.response.use(
 )
 
 export default service
-
-{{< / highlight >}}
+```
 
 ## test.js{#test}
 
 实际生产中一般对应一组业务请求，例如商品的增删改查，所有请求放在一个js文件里方便管理。
 
-{{< highlight javascript >}}
+```javascript
 import request from '@/utils/request'
 //restful API示例
 const url = "/test"
@@ -112,14 +109,14 @@ export function deleteByid(id) {
     method: 'delete',
   })
 }
-{{< / highlight >}}
+
+```
 
 ## login.vue
 
 实际使用:按需要引入上面的[test.js](#test)文件中的方法,如下演示了使用update方法。
 
-{{< highlight vue >}}
-
+```vue
 <template>
   <div>
     login页
@@ -149,4 +146,7 @@ export function deleteByid(id) {
     };
 </script>
 
-{{< / highlight >}}
+```
+
+
+

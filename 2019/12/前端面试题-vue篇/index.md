@@ -1,5 +1,11 @@
 # 前端面试题-Vue篇
 
+
+个人收集的一些vue面试题。
+
+很多讲的不够深入，如有错误欢迎指正:raised_hands:
+
+<!--more-->
 ## 1 vue两个核心
 
 数据驱动 组件系统
@@ -16,9 +22,8 @@ route相当于当前正在跳转的路由对象，可以从里面获取name,path
 使用示例
 
 app.vue
-{{< highlight go "hl_lines=3 5-7,linenostart=20" >}}
-
-<pre >
+```vue
+<pre>
 <!--这里是需要keepalive的-->
 <keep-alive>
  <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -26,13 +31,11 @@ app.vue
 <!-- 这里不会被keepAlive -->
 <router-view v-if="!$route.meta.keepAlive"></router-view>
 </pre>
-
-{{< / highlight >}}
+```
 
 index.js
 
-{{< highlight go "hl_lines=3 5-7,linenostart=20" >}}
-
+```javascript
 {
     path: '',
     name: '',
@@ -45,8 +48,7 @@ index.js
     component: ,
     meta: {keepAlive: false} // 这是不会被keepalive的
 }
-
-{{< / highlight >}}
+```
 
 ## 4 vue-router 导航钩子
 

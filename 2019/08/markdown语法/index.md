@@ -5,8 +5,6 @@
 
 文章内容基于 [GitHub Flavo红色 Markdown Spec](https://github.github.com/gfm)。
 
-不包含复杂的规则说明，仅仅展示 GFM 所约定的 Markdown 基本语法。
-
 <!--more-->
 
 ## 1 引言

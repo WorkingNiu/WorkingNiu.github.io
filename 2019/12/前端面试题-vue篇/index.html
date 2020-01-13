@@ -41,7 +41,7 @@
     
         "keywords": "前端, 面试题",
     
-    "wordcount":  524 ,
+    "wordcount":  555 ,
     "url": "https:\/\/WorkingNiu.github.io\/2019\/12\/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87\/",
     
         "datePublished": "2019-12-29T15:01:12\x2b08:00",
@@ -141,7 +141,7 @@
             </div>
             <div class="post-meta-other">
                 <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-29>2019-12-29</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 524 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 555 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
         </div>
 
@@ -216,7 +216,9 @@
             
             
             
-            <a class="post-dummy-target" id="1-vue"></a><h2>1 vue两个核心</h2>
+            <p>个人收集的一些vue面试题。</p>
+<p>很多讲的不够深入，如有错误欢迎指正🙌</p>
+<a class="post-dummy-target" id="1-vue"></a><h2>1 vue两个核心</h2>
 <p>数据驱动 组件系统</p>
 <a class="post-dummy-target" id="2-routerroute"></a><h2>2 router和route</h2>
 <p>router为VueRouter的实例，相当于一个全局的路由器对象，里面含有很多属性和子对象，例如history对象，经常用的跳转链接就可以用this.$router.push，和router-link跳转一样。。。
@@ -224,66 +226,65 @@ route相当于当前正在跳转的路由对象，可以从里面获取name,path
 <a class="post-dummy-target" id="3-keep-alive"></a><h2>3 keep-alive</h2>
 <p>当它包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。在组件切换过程中将状态保留在内存中，防止重复渲染DOM，减少加载时间及性能消耗，提高用户体验性和 transition 相似，keep-alive 是一个抽象组件：它自身不会渲染成一个 DOM 元素，也不会出现在父组件链中。主要在app,vue中配置，通过属性判断是否使用缓存.</p>
 <p>使用示例</p>
-<p>app.vue
+<p>app.vue</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="hl"><span class="lnt">22
-</span></span><span class="lnt">23
-</span><span class="hl"><span class="lnt">24
-</span></span><span class="hl"><span class="lnt">25
-</span></span><span class="hl"><span class="lnt">26
-</span></span><span class="lnt">27
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="p">&lt;</span><span class="nx">pre</span> <span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">!</span><span class="o">--</span><span class="nx">这里是需要keepalive的</span><span class="o">--</span><span class="p">&gt;</span>
-<span class="hl"><span class="p">&lt;</span><span class="nx">keep</span><span class="o">-</span><span class="nx">alive</span><span class="p">&gt;</span>
-</span> <span class="p">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="p">=</span><span class="s">&#34;$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="p">&gt;</span>
-<span class="hl"><span class="p">&lt;</span><span class="nx">keep</span><span class="o">-</span><span class="nx">alive</span><span class="p">&gt;</span>
-</span><span class="hl"><span class="p">&lt;</span><span class="p">!</span><span class="o">--</span> <span class="nx">这里不会被keepAlive</span> <span class="o">--</span><span class="p">&gt;</span>
-</span><span class="hl"><span class="p">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="p">=</span><span class="s">&#34;!$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="p">&gt;</span>
-</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">pre</span><span class="p">&gt;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-vue" data-lang="vue"><span class="p">&lt;</span><span class="nt">pre</span><span class="p"></span><span class="p">&gt;</span>
+<span class="c">&lt;!--</span><span class="nx">这里是需要keepalive的</span><span class="o">--</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">keep</span><span class="nt">-alive</span><span class="p"></span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">router</span><span class="nt">-view</span> <span class="nt">v-if</span><span class="s">=&#34;$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="err">&lt;</span><span class="err">/</span><span class="na">router</span><span class="nt">-view</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">keep</span><span class="nt">-alive</span><span class="p"></span><span class="p">&gt;</span>
+<span class="c">&lt;!--</span> <span class="nx">这里不会被keepAlive</span> <span class="o">--</span><span class="o">&gt;</span>
+<span class="p">&lt;</span><span class="nt">router</span><span class="nt">-view</span> <span class="nt">v-if</span><span class="s">=&#34;!$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="err">&lt;</span><span class="err">/</span><span class="na">router</span><span class="nt">-view</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
 </div>
-</div></p>
-<p>index.js</p>
+</div><p>index.js</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="hl"><span class="lnt">22
-</span></span><span class="lnt">23
-</span><span class="hl"><span class="lnt">24
-</span></span><span class="hl"><span class="lnt">25
-</span></span><span class="hl"><span class="lnt">26
-</span></span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{</span>
-    <span class="nx">path</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
-<span class="hl">    <span class="nx">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
-</span>    <span class="nx">component</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
-<span class="hl">    <span class="nx">meta</span><span class="p">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// 这个是需要keepalive的
-</span></span><span class="hl"><span class="c1"></span><span class="p">}</span><span class="err">，</span>
-</span><span class="hl"><span class="p">{</span>
-</span>    <span class="nx">path</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
-    <span class="nx">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
-    <span class="nx">component</span><span class="p">:</span> <span class="p">,</span>
-    <span class="nx">meta</span><span class="p">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span> <span class="c1">// 这是不会被keepalive的
-</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">meta</span><span class="o">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// 这个是需要keepalive的
+</span><span class="c1"></span><span class="p">}</span><span class="err">，</span>
+<span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="p">,</span>
+    <span class="nx">meta</span><span class="o">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="c1">// 这是不会被keepalive的
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<a class="post-dummy-target" id="4-vue-router-"></a><h2>4 vue-router 导航钩子</h2>
+</div><a class="post-dummy-target" id="4-vue-router-"></a><h2>4 vue-router 导航钩子</h2>
 <p>vue-router 导航钩子包括全局级钩子、路由级钩子、组件级钩子</p>
 <a class="post-dummy-target" id="41-"></a><h3>4.1 全局级钩子</h3>
 <a class="post-dummy-target" id="42-"></a><h3>4.2 路由级钩子</h3>
 <a class="post-dummy-target" id="43-"></a><h3>4.3 组件级钩子</h3>
-
         </div>
 
         <div class="post-footer" id="post-footer">
