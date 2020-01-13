@@ -1,7 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/angular/</loc>
+            <loc>https://WorkingNiu.github.io/tags/angular/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -15,7 +15,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/angular/</loc>
+            <loc>https://WorkingNiu.github.io/categories/angular/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -43,7 +43,21 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/2019/12/axios/</loc>
+            <loc>https://WorkingNiu.github.io/tags/axios/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -127,7 +141,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/typescript/</loc>
+            <loc>https://WorkingNiu.github.io/categories/typescript/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -141,7 +155,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/typescript/</loc>
+            <loc>https://WorkingNiu.github.io/tags/typescript/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -169,7 +183,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/vue/</loc>
+            <loc>https://WorkingNiu.github.io/categories/vue/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -183,7 +197,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/vue/</loc>
+            <loc>https://WorkingNiu.github.io/tags/vue/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -267,7 +281,35 @@
         </url>
     
         <url>
+            <loc>https://WorkingNiu.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://WorkingNiu.github.io/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/2019/12/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -323,6 +365,34 @@
         </url>
     
         <url>
+            <loc>https://WorkingNiu.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://WorkingNiu.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+            
+                <lastmod>2019-12-29T15:01:12+08:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://WorkingNiu.github.io/about/</loc>
             
                 <lastmod>2019-12-28T11:04:49+08:00</lastmod>
@@ -337,7 +407,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/markdown/</loc>
+            <loc>https://WorkingNiu.github.io/tags/markdown/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
@@ -351,7 +421,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/markdown/</loc>
+            <loc>https://WorkingNiu.github.io/categories/markdown/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
