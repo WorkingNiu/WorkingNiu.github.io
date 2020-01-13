@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>前端面试题-Vue篇 | WorkingNiu的博客</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="个人收集学习的前端面试题，如有错误欢迎指出">
+<link rel="prev" href="https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" />
+<link rel="next" href="https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/" />
+<link rel="canonical" href="https://WorkingNiu.github.io/2019/12/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="前端面试题-Vue篇"/>
+<meta name="twitter:description" content="个人收集学习的前端面试题，如有错误欢迎指出"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "前端面试题-Vue篇",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/WorkingNiu.github.io\/2019\/12\/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "前端, 面试题",
+    
+    "wordcount":  524 ,
+    "url": "https:\/\/WorkingNiu.github.io\/2019\/12\/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87\/",
+    
+        "datePublished": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "dateModified": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": "个人收集学习的前端面试题，如有错误欢迎指出"
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">前端面试题-Vue篇</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://WorkingNiu.github.io" rel="author"><i class="fas fa-user-circle fa-fw"></i>WorkingNiu&nbsp;</a>
+                <span class="post-category">
+                        收录于
+                        <i class="far fa-folder fa-fw"></i><a href="https://WorkingNiu.github.io/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-29>2019-12-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 524 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div>
+
+        
+
+        <div class="post-toc" id="post-toc">
+                <h2 class="post-toc-title">目录</h2>
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-vue">1 vue两个核心</a></li>
+    <li><a href="#2-routerroute">2 router和route</a></li>
+    <li><a href="#3-keep-alive">3 keep-alive</a></li>
+    <li><a href="#4-vue-router-">4 vue-router 导航钩子</a>
+      <ul>
+        <li><a href="#41-">4.1 全局级钩子</a></li>
+        <li><a href="#42-">4.2 路由级钩子</a></li>
+        <li><a href="#43-">4.3 组件级钩子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            </div>
+            <div class="post-toc-mobile" id="post-toc-mobile">
+                <details>
+                    <summary><div class="post-toc-title"><span>目录</span><span><i class="details icon fas fa-angle-down"></i></span></div></summary>
+                    <div class="post-toc-content">
+                        
+                        
+                        <nav id="TableOfContentsMobile">
+  <ul>
+    <li><a href="#1-vue">1 vue两个核心</a></li>
+    <li><a href="#2-routerroute">2 router和route</a></li>
+    <li><a href="#3-keep-alive">3 keep-alive</a></li>
+    <li><a href="#4-vue-router-">4 vue-router 导航钩子</a>
+      <ul>
+        <li><a href="#41-">4.1 全局级钩子</a></li>
+        <li><a href="#42-">4.2 路由级钩子</a></li>
+        <li><a href="#43-">4.3 组件级钩子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                    </div>
+                </details>
+            </div>
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="1-vue"></a><h2>1 vue两个核心</h2>
+<p>数据驱动 组件系统</p>
+<a class="post-dummy-target" id="2-routerroute"></a><h2>2 router和route</h2>
+<p>router为VueRouter的实例，相当于一个全局的路由器对象，里面含有很多属性和子对象，例如history对象，经常用的跳转链接就可以用this.$router.push，和router-link跳转一样。。。
+route相当于当前正在跳转的路由对象，可以从里面获取name,path,params,query等</p>
+<a class="post-dummy-target" id="3-keep-alive"></a><h2>3 keep-alive</h2>
+<p>当它包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。在组件切换过程中将状态保留在内存中，防止重复渲染DOM，减少加载时间及性能消耗，提高用户体验性和 transition 相似，keep-alive 是一个抽象组件：它自身不会渲染成一个 DOM 元素，也不会出现在父组件链中。主要在app,vue中配置，通过属性判断是否使用缓存.</p>
+<p>使用示例</p>
+<p>app.vue
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="hl"><span class="lnt">22
+</span></span><span class="lnt">23
+</span><span class="hl"><span class="lnt">24
+</span></span><span class="hl"><span class="lnt">25
+</span></span><span class="hl"><span class="lnt">26
+</span></span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="p">&lt;</span><span class="nx">pre</span> <span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">!</span><span class="o">--</span><span class="nx">这里是需要keepalive的</span><span class="o">--</span><span class="p">&gt;</span>
+<span class="hl"><span class="p">&lt;</span><span class="nx">keep</span><span class="o">-</span><span class="nx">alive</span><span class="p">&gt;</span>
+</span> <span class="p">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="p">=</span><span class="s">&#34;$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="p">&gt;</span>
+<span class="hl"><span class="p">&lt;</span><span class="nx">keep</span><span class="o">-</span><span class="nx">alive</span><span class="p">&gt;</span>
+</span><span class="hl"><span class="p">&lt;</span><span class="p">!</span><span class="o">--</span> <span class="nx">这里不会被keepAlive</span> <span class="o">--</span><span class="p">&gt;</span>
+</span><span class="hl"><span class="p">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="p">=</span><span class="s">&#34;!$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="p">&gt;</span>
+</span><span class="p">&lt;</span><span class="o">/</span><span class="nx">pre</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>index.js</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="hl"><span class="lnt">22
+</span></span><span class="lnt">23
+</span><span class="hl"><span class="lnt">24
+</span></span><span class="hl"><span class="lnt">25
+</span></span><span class="hl"><span class="lnt">26
+</span></span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{</span>
+    <span class="nx">path</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="hl">    <span class="nx">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
+</span>    <span class="nx">component</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="hl">    <span class="nx">meta</span><span class="p">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// 这个是需要keepalive的
+</span></span><span class="hl"><span class="c1"></span><span class="p">}</span><span class="err">，</span>
+</span><span class="hl"><span class="p">{</span>
+</span>    <span class="nx">path</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="p">:</span> <span class="err">&#39;</span><span class="err">&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="p">:</span> <span class="p">,</span>
+    <span class="nx">meta</span><span class="p">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span> <span class="c1">// 这是不会被keepalive的
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<a class="post-dummy-target" id="4-vue-router-"></a><h2>4 vue-router 导航钩子</h2>
+<p>vue-router 导航钩子包括全局级钩子、路由级钩子、组件级钩子</p>
+<a class="post-dummy-target" id="41-"></a><h3>4.1 全局级钩子</h3>
+<a class="post-dummy-target" id="42-"></a><h3>4.2 路由级钩子</h3>
+<a class="post-dummy-target" id="43-"></a><h3>4.3 组件级钩子</h3>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-12-29 更新</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2f%25E5%2589%258D%25E7%25AB%25AF%25E9%259D%25A2%25E8%25AF%2595%25E9%25A2%2598-vue%25E7%25AF%2587%2f&amp;text=%e5%89%8d%e7%ab%af%e9%9d%a2%e8%af%95%e9%a2%98-Vue%e7%af%87&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2f%25E5%2589%258D%25E7%25AB%25AF%25E9%259D%25A2%25E8%25AF%2595%25E9%25A2%2598-vue%25E7%25AF%2587%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2f%25E5%2589%258D%25E7%25AB%25AF%25E9%259D%25A2%25E8%25AF%2595%25E9%25A2%2598-vue%25E7%25AF%2587%2f&amp;title=%e5%89%8d%e7%ab%af%e9%9d%a2%e8%af%95%e9%a2%98-Vue%e7%af%87" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://WorkingNiu.github.io/tags/%E5%89%8D%E7%AB%AF/"><i class="fas fa-tag fa-fw"></i>前端</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://WorkingNiu.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"><i class="fas fa-tag fa-fw"></i>面试题</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://WorkingNiu.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="prev" rel="prev" title="微信小程序-基础语法"><i class="fas fa-angle-left fa-fw"></i>微信小程序-基础语法</a>
+        
+        
+            <a href="https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/" class="next" rel="next" title="一次搞懂ES6新特性">一次搞懂ES6新特性<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
+</div>
+
+        <div class="post-comment"><div id="vcomments"></div>
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+            <script type="text/javascript">
+                new Valine({
+                    el: "#vcomments",
+                    appId: "k5zkK4ob8u4XsdxcFJ3SrrYH-gzGzoHsz",
+                    appKey: "VHtQ2sg8KBIRgTp8F3bu1REf",
+                    avatar: "monsterid",
+                    placeholder: "说点什么吧",
+                });
+            </script></div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            郵箱：953456096@qq.com&nbsp;|&nbsp; <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+            
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://WorkingNiu.github.io">WorkingNiu</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

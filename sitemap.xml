@@ -1,7 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/angular/</loc>
+            <loc>https://WorkingNiu.github.io/categories/angular/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -15,7 +15,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/angular/</loc>
+            <loc>https://WorkingNiu.github.io/tags/angular/</loc>
             
                 <lastmod>2019-12-29T15:01:12+08:00</lastmod>
             
@@ -407,7 +407,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/tags/markdown/</loc>
+            <loc>https://WorkingNiu.github.io/categories/markdown/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
@@ -421,7 +421,7 @@
         </url>
     
         <url>
-            <loc>https://WorkingNiu.github.io/categories/markdown/</loc>
+            <loc>https://WorkingNiu.github.io/tags/markdown/</loc>
             
                 <lastmod>2019-08-25T16:22:42+08:00</lastmod>
             
