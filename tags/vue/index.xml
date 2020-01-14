@@ -19,7 +19,7 @@
       
       <guid>https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;p&gt;分享一套比较常见的axios二次封装使用方法。&lt;/p&gt;
-&lt;p&gt;源码参考 &lt;a href=&#34;https://github.com/WorkingNiu/vueskeleton&#34;&gt;本人Github&lt;/a&gt;，话不多说直接上代码，如有错误欢迎指正。&lt;/p&gt;</description>
+&lt;p&gt;源码参考 &lt;a href=&#34;https://github.com/WorkingNiu/vueskeleton&#34;&gt;本人Github&lt;/a&gt;，如有错误欢迎指正。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,21 +32,22 @@
     </item>
     
     <item>
-      <title>Vue-基础语法</title>
-      <link>https://WorkingNiu.github.io/2019/12/vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Vuex</title>
       <link>https://WorkingNiu.github.io/2019/12/vuex/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
       
       <guid>https://WorkingNiu.github.io/2019/12/vuex/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>保姆式从零构建Vue项目教学</title>
+      <link>https://WorkingNiu.github.io/2019/12/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/</guid>
+      <description>&lt;p&gt;vue个人学习笔记&lt;/p&gt;
+&lt;p&gt;从入门到入坑😤&lt;/p&gt;</description>
     </item>
     
   </channel>

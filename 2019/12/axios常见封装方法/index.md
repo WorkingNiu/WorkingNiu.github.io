@@ -3,7 +3,7 @@
 
 分享一套比较常见的axios二次封装使用方法。
 
-源码参考 [本人Github](https://github.com/WorkingNiu/vueskeleton)，话不多说直接上代码，如有错误欢迎指正。
+源码参考 [本人Github](https://github.com/WorkingNiu/vueskeleton)，如有错误欢迎指正。
 
 <!--more-->
 ## request.js
