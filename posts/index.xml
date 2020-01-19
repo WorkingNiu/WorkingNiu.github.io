@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>async/await使用理解</title>
+      <link>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</guid>
+      <description>&lt;p&gt;es7提供的一种解决异步操作的方案&lt;/p&gt;
+&lt;p&gt;业务中有时会用到&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Axios常见封装方法</title>
       <link>https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
@@ -60,6 +70,25 @@
     </item>
     
     <item>
+      <title>Spring Boot提供的图片上传回显方案</title>
+      <link>https://WorkingNiu.github.io/2019/12/springboot%E6%8F%90%E4%BE%9B%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%9B%9E%E6%98%BE%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/springboot%E6%8F%90%E4%BE%9B%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%9B%9E%E6%98%BE%E6%96%B9%E6%A1%88/</guid>
+      <description>&lt;p&gt;做毕业设计遇到图片上传回显业务&lt;/p&gt;
+&lt;p&gt;记录一下，挺简单的&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot整合Swagger2</title>
+      <link>https://WorkingNiu.github.io/2019/12/spring-boot%E6%95%B4%E5%90%88swagger2/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/spring-boot%E6%95%B4%E5%90%88swagger2/</guid>
+      <description>&lt;p&gt;工作中用到Swagger2对接文档，记录以下整合&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>保姆式从零构建Vue项目教学</title>
       <link>https://WorkingNiu.github.io/2019/12/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
@@ -77,6 +106,16 @@
       <guid>https://WorkingNiu.github.io/2019/12/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/</guid>
       <description>&lt;p&gt;个人收集的一些vue面试题。&lt;/p&gt;
 &lt;p&gt;很多讲的不够深入，如有错误欢迎指正🙌&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>微信小程序跳转总结</title>
+      <link>https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;p&gt;工作中总结的小程序跳转方法总结&lt;/p&gt;
+&lt;p&gt;如有不足欢迎补充&lt;/p&gt;</description>
     </item>
     
     <item>

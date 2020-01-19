@@ -13,12 +13,13 @@
     
     
     <item>
-      <title>一次搞懂ES6新特性</title>
-      <link>https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/</link>
+      <title>async/await使用理解</title>
+      <link>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
       
-      <guid>https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
-      <description></description>
+      <guid>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</guid>
+      <description>&lt;p&gt;es7提供的一种解决异步操作的方案&lt;/p&gt;
+&lt;p&gt;业务中有时会用到&lt;/p&gt;</description>
     </item>
     
   </channel>
