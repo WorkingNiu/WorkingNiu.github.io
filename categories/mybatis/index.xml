@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mybatis on WorkingNiu的博客</title>
+    <link>https://WorkingNiu.github.io/categories/mybatis/</link>
+    <description>Recent content in Mybatis on WorkingNiu的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 29 Dec 2019 15:01:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://WorkingNiu.github.io/categories/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mybatis注解实现一对一和一对多查询</title>
+      <link>https://WorkingNiu.github.io/2019/12/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/</guid>
+      <description>&lt;p&gt;个人使用中一点总计，如有错误欢迎指出&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

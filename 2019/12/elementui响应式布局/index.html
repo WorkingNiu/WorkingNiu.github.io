@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Element-UI响应式布局 | WorkingNiu的博客</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="梁仲乾的个人博客">
+<link rel="prev" href="https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E7%9C%8B%E6%87%82less/" />
+<link rel="next" href="https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/" />
+<link rel="canonical" href="https://WorkingNiu.github.io/2019/12/elementui%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Element-UI响应式布局"/>
+<meta name="twitter:description" content="公司用的elementui，有一部分响应式的需求
+自我总结，欢迎指正"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Element-UI响应式布局",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/WorkingNiu.github.io\/2019\/12\/elementui%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "Vue, Element-UI",
+    
+    "wordcount":  456 ,
+    "url": "https:\/\/WorkingNiu.github.io\/2019\/12\/elementui%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80\/",
+    
+        "datePublished": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "dateModified": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">Element-UI响应式布局</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://WorkingNiu.github.io" rel="author"><i class="fas fa-user-circle fa-fw"></i>WorkingNiu&nbsp;</a>
+                <span class="post-category">
+                        收录于
+                        <i class="far fa-folder fa-fw"></i><a href="https://WorkingNiu.github.io/categories/vue/">Vue</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-29>2019-12-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 456 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 1 分钟&nbsp;</div>
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>公司用的elementui，有一部分响应式的需求</p>
+<p>自我总结，欢迎指正</p>
+<p>去看了下bootstrap的响应式用法，</p>
+<p>才发现原来element-ui以及其他好几个vue的ui库都做过响应式的布局的组件，</p>
+<p>话不多说直接上代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;el-row :gutter=&#34;10&#34;&gt;
+  &lt;el-col :xs=&#34;8&#34; :sm=&#34;6&#34; :md=&#34;4&#34; :lg=&#34;3&#34; :xl=&#34;1&#34;&gt;&lt;div class=&#34;grid-content bg-purple&#34;&gt;&lt;/div&gt;&lt;/el-col&gt;
+  &lt;el-col :xs=&#34;4&#34; :sm=&#34;6&#34; :md=&#34;8&#34; :lg=&#34;9&#34; :xl=&#34;11&#34;&gt;&lt;div class=&#34;grid-content bg-purple-light&#34;&gt;&lt;/div&gt;&lt;/el-col&gt;
+  &lt;el-col :xs=&#34;4&#34; :sm=&#34;6&#34; :md=&#34;8&#34; :lg=&#34;9&#34; :xl=&#34;11&#34;&gt;&lt;div class=&#34;grid-content bg-purple&#34;&gt;&lt;/div&gt;&lt;/el-col&gt;
+  &lt;el-col :xs=&#34;8&#34; :sm=&#34;6&#34; :md=&#34;4&#34; :lg=&#34;3&#34; :xl=&#34;1&#34;&gt;&lt;div class=&#34;grid-content bg-purple-light&#34;&gt;&lt;/div&gt;&lt;/el-col&gt;
+&lt;/el-row&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>其实就是做了每行总共24个栅格，在不同尺寸的页面上如何分配宽度比例：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xs</td>
+<td>&lt;768px</td>
+</tr>
+<tr>
+<td>sm</td>
+<td>≥768px</td>
+</tr>
+<tr>
+<td>md</td>
+<td>≥992px</td>
+</tr>
+<tr>
+<td>lg</td>
+<td>≥1200px</td>
+</tr>
+<tr>
+<td>xl</td>
+<td>≥1920px</td>
+</tr>
+</tbody>
+</table>
+<p>比如这里直接给xs赋值4，他的宽度在xs（&lt;768px，手机）就是4/24。</p>
+<p>除了直接给赋值数字，也可以给对象如：{span:18,offset:3}。</p>
+<p>span即是仅赋值数值时的默认参数位，为宽度。</p>
+<p>offset为从左边的偏移量，也是1/24为单位。</p>
+<p>###示例</p>
+<p>立刻搞定之前想要的效果：宽屏页面时内容仅仅占页面宽50%居中显示。窄屏幕时占70%，手机时占100%。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"> <span class="p">&lt;</span><span class="nt">el-row</span> <span class="na">:gutter</span><span class="o">=</span><span class="s">&#34;10&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">el-col</span> <span class="na">:xs</span><span class="o">=</span><span class="s">&#34;{span:24,offset:0}&#34;</span> <span class="na">:sm</span><span class="o">=</span><span class="s">&#34;{span:16,offset:4}&#34;</span> <span class="na">:md</span><span class="o">=</span><span class="s">&#34;{span:12,offset:6}&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">el-col</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="p">/</span><span class="nt">el-row</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>gutter就是各col之间的间距。</p>
+<p>这种方法其实使用的还是@media。但是确实方便配置多了。</p>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-12-29 更新</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2felementui%25E5%2593%258D%25E5%25BA%2594%25E5%25BC%258F%25E5%25B8%2583%25E5%25B1%2580%2f&amp;text=Element-UI%e5%93%8d%e5%ba%94%e5%bc%8f%e5%b8%83%e5%b1%80&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2felementui%25E5%2593%258D%25E5%25BA%2594%25E5%25BC%258F%25E5%25B8%2583%25E5%25B1%2580%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2felementui%25E5%2593%258D%25E5%25BA%2594%25E5%25BC%258F%25E5%25B8%2583%25E5%25B1%2580%2f&amp;title=Element-UI%e5%93%8d%e5%ba%94%e5%bc%8f%e5%b8%83%e5%b1%80" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://WorkingNiu.github.io/tags/vue/"><i class="fas fa-tag fa-fw"></i>Vue</a>
+                    </span>
+                
+                    <span class="tag">
+                        <a href="https://WorkingNiu.github.io/tags/element-ui/"><i class="fas fa-tag fa-fw"></i>Element-UI</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://WorkingNiu.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E7%9C%8B%E6%87%82less/" class="prev" rel="prev" title="less简单入门"><i class="fas fa-angle-left fa-fw"></i>less简单入门</a>
+        
+        
+            <a href="https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/" class="next" rel="next" title="Axios常见封装方法">Axios常见封装方法<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
+</div>
+
+        <div class="post-comment"><div id="vcomments"></div>
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+            <script type="text/javascript">
+                new Valine({
+                    el: "#vcomments",
+                    appId: "k5zkK4ob8u4XsdxcFJ3SrrYH-gzGzoHsz",
+                    appKey: "VHtQ2sg8KBIRgTp8F3bu1REf",
+                    avatar: "monsterid",
+                    placeholder: "说点什么吧",
+                });
+            </script></div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            郵箱：953456096@qq.com&nbsp;|&nbsp; <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+            
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://WorkingNiu.github.io">WorkingNiu</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

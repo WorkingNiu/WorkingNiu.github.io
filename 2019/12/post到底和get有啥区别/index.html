@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>post到底和get有啥区别 | WorkingNiu的博客</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="梁仲乾的个人博客">
+<link rel="prev" href="https://WorkingNiu.github.io/2019/12/typescript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" />
+<link rel="next" href="https://WorkingNiu.github.io/2019/12/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" />
+<link rel="canonical" href="https://WorkingNiu.github.io/2019/12/post%E5%88%B0%E5%BA%95%E5%92%8Cget%E6%9C%89%E5%95%A5%E5%8C%BA%E5%88%AB/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="post到底和get有啥区别"/>
+<meta name="twitter:description" content=""/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "post到底和get有啥区别",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/WorkingNiu.github.io\/2019\/12\/post%E5%88%B0%E5%BA%95%E5%92%8Cget%E6%9C%89%E5%95%A5%E5%8C%BA%E5%88%AB\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "面试",
+    
+    "wordcount":  2240 ,
+    "url": "https:\/\/WorkingNiu.github.io\/2019\/12\/post%E5%88%B0%E5%BA%95%E5%92%8Cget%E6%9C%89%E5%95%A5%E5%8C%BA%E5%88%AB\/",
+    
+        "datePublished": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "dateModified": "2019-12-29T15:01:12\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/WorkingNiu.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://WorkingNiu.github.io">WorkingNiu的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://WorkingNiu.github.io/categories" title="">分类</a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">post到底和get有啥区别</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://WorkingNiu.github.io" rel="author"><i class="fas fa-user-circle fa-fw"></i>WorkingNiu&nbsp;</a>
+                <span class="post-category">
+                        收录于
+                        <i class="far fa-folder fa-fw"></i><a href="https://WorkingNiu.github.io/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-29>2019-12-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2240 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 5 分钟&nbsp;</div>
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。</p>
+<p>最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。</p>
+<p>你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。</p>
+<p>当你在面试中被问到这个问题，你的内心充满了自信和喜悦。</p>
+<p>你轻轻松松的给出了一个“标准答案”：</p>
+<p>GET在浏览器回退时是无害的，而POST会再次提交请求。</p>
+<p>GET产生的URL地址可以被Bookmark，而POST不可以。</p>
+<p>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</p>
+<p>GET请求只能进行url编码，而POST支持多种编码方式。</p>
+<p>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</p>
+<p>GET请求在URL中传送的参数是有长度限制的，而POST么有。</p>
+<p>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</p>
+<p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
+<p>GET参数通过URL传递，POST放在Request body中。</p>
+<p>（本标准答案参考自w3schools）</p>
+<p>“很遗憾，这不是我们要的回答！”</p>
+<p>请告诉我真相。。。</p>
+<p>如果我告诉你GET和POST本质上没有区别你信吗？</p>
+<p>让我们扒下GET和POST的外衣，坦诚相见吧！</p>
+<p>GET和POST是什么？HTTP协议中的两种发送请求的方法。</p>
+<p>HTTP是什么？HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。</p>
+<p>HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。</p>
+<p>那么，“标准答案”里的那些区别是怎么回事？</p>
+<p>在我大万维网世界中，TCP就像汽车，我们用TCP来运输数据，它很可靠，从来不会发生丢件少件的现象。但是如果路上跑的全是看起来一模一样的汽车，那这个世界看起来是一团混乱，送急件的汽车可能被前面满载货物的汽车拦堵在路上，整个交通系统一定会瘫痪。为了避免这种情况发生，交通规则HTTP诞生了。HTTP给汽车运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给汽车贴上GET的标签（设置method为GET），而且要求把传送的数据放在车顶上（url中）以方便记录。如果是POST请求，就要在车上贴上POST的标签，并把货物放在车厢里。当然，你也可以在GET的时候往车厢内偷偷藏点货物，但是这是很不光彩；也可以在POST的时候在车顶上也放一些数据，让人觉得傻乎乎的。HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。</p>
+<p>但是，我们只看到HTTP对GET和POST参数的传送渠道（url还是requrest body）提出了要求。“标准答案”里关于参数大小的限制又是从哪来的呢？</p>
+<p>在我大万维网世界中，还有另一个重要的角色：运输公司。不同的浏览器（发起http请求）和服务器（接受http请求）就是不同的运输公司。 虽然理论上，你可以在车顶上无限的堆货物（url中无限加参数）。但是运输公司可不傻，装货和卸货也是有很大成本的，他们会限制单次运输量来控制风险，数据量太大对浏览器和服务器都是很大负担。业界不成文的规定是，（大多数）浏览器通常都会限制url长度在2K个字节，而（大多数）服务器最多处理64K大小的url。超过的部分，恕不处理。如果你用GET服务，在request body偷偷藏了数据，不同服务器的处理方式也是不同的，有些服务器会帮你卸货，读出数据，有些服务器直接忽略，所以，虽然GET可以带request body，也不能保证一定能被接收到哦。</p>
+<p>好了，现在你知道，GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
+<p>你以为本文就这么结束了？</p>
+<p>我们的大BOSS还等着出场呢。。。</p>
+<p>这位BOSS有多神秘？当你试图在网上找“GET和POST的区别”的时候，那些你会看到的搜索结果里，从没有提到他。他究竟是什么呢。。。</p>
+<p>GET和POST还有一个重大区别，简单的说：</p>
+<p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<p>长的说：</p>
+<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p>
+<p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？</p>
+<ol>
+<li>
+<p>GET与POST都有自己的语义，不能随便混用。</p>
+</li>
+<li>
+<p>据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p>
+</li>
+<li>
+<p>并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p>
+</li>
+</ol>
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-12-29 更新</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+        <a href="//twitter.com/share?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2fpost%25E5%2588%25B0%25E5%25BA%2595%25E5%2592%258Cget%25E6%259C%2589%25E5%2595%25A5%25E5%258C%25BA%25E5%2588%25AB%2f&amp;text=post%e5%88%b0%e5%ba%95%e5%92%8cget%e6%9c%89%e5%95%a5%e5%8c%ba%e5%88%ab&amp;via=" target="_blank" title="Share on Twitter">
+            <i class="fab fa-twitter fa-fw"></i>
+        </a>
+    
+    
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2fpost%25E5%2588%25B0%25E5%25BA%2595%25E5%2592%258Cget%25E6%259C%2589%25E5%2595%25A5%25E5%258C%25BA%25E5%2588%25AB%2f" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-square fa-fw"></i>
+        </a>
+    
+    
+        <a href="//reddit.com/submit?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f12%2fpost%25E5%2588%25B0%25E5%25BA%2595%25E5%2592%258Cget%25E6%259C%2589%25E5%2595%25A5%25E5%258C%25BA%25E5%2588%25AB%2f&amp;title=post%e5%88%b0%e5%ba%95%e5%92%8cget%e6%9c%89%e5%95%a5%e5%8c%ba%e5%88%ab" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit fa-fw"></i>
+        </a>
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://WorkingNiu.github.io/tags/%E9%9D%A2%E8%AF%95/"><i class="fas fa-tag fa-fw"></i>面试</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://WorkingNiu.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://WorkingNiu.github.io/2019/12/typescript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="prev" rel="prev" title="TypeScript-基础语法"><i class="fas fa-angle-left fa-fw"></i>TypeScript-基础语法</a>
+        
+        
+            <a href="https://WorkingNiu.github.io/2019/12/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" class="next" rel="next" title="Mybatis注解实现一对一和一对多查询">Mybatis注解实现一对一和一对多查询<i class="fas fa-angle-right fa-fw"></i></a>
+        
+    </div>
+</div>
+
+        <div class="post-comment"><div id="vcomments"></div>
+            <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+            <script type="text/javascript">
+                new Valine({
+                    el: "#vcomments",
+                    appId: "k5zkK4ob8u4XsdxcFJ3SrrYH-gzGzoHsz",
+                    appKey: "VHtQ2sg8KBIRgTp8F3bu1REf",
+                    avatar: "monsterid",
+                    placeholder: "说点什么吧",
+                });
+            </script></div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            郵箱：953456096@qq.com&nbsp;|&nbsp; <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+            
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://WorkingNiu.github.io">WorkingNiu</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+        <link rel="stylesheet" href="/css/lib/katex/katex.min.min.css"><script src="/js/lib/katex/katex.min.min.js"></script><script defer src="/js/lib/katex/auto-render.min.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
