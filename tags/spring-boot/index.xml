@@ -23,6 +23,15 @@
     </item>
     
     <item>
+      <title>Spring Boot整合Redis使用</title>
+      <link>https://WorkingNiu.github.io/2019/12/spring-boot-%E6%95%B4%E5%90%88redis%E4%BD%BF%E7%94%A8%E9%99%84%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/spring-boot-%E6%95%B4%E5%90%88redis%E4%BD%BF%E7%94%A8%E9%99%84%E5%B7%A5%E5%85%B7%E7%B1%BB/</guid>
+      <description>&lt;p&gt;包含整合过程和通用工具类&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Spring Boot整合Swagger2</title>
       <link>https://WorkingNiu.github.io/2019/12/spring-boot%E6%95%B4%E5%90%88swagger2/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>

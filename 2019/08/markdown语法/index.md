@@ -428,8 +428,7 @@ Web image
 ![Web Picture](https://static.dillonzq.com/images/20190817130904-U6cPUk.jpg "Web Picture")
 
 Local image
-![Local Picture](/applehugo server -t loveit  --buildDrafts-touch-icon.png "Local Picture")
-
+![Local Picture](/apple-touch-icon.png "Local Picture")
 <https://www.google.com>
 
 <contact@revolunet.com>

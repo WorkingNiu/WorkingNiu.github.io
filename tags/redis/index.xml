@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on WorkingNiu的博客</title>
+    <link>https://WorkingNiu.github.io/tags/redis/</link>
+    <description>Recent content in Redis on WorkingNiu的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 29 Dec 2019 15:01:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://WorkingNiu.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Boot整合Redis使用</title>
+      <link>https://WorkingNiu.github.io/2019/12/spring-boot-%E6%95%B4%E5%90%88redis%E4%BD%BF%E7%94%A8%E9%99%84%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
+      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
+      
+      <guid>https://WorkingNiu.github.io/2019/12/spring-boot-%E6%95%B4%E5%90%88redis%E4%BD%BF%E7%94%A8%E9%99%84%E5%B7%A5%E5%85%B7%E7%B1%BB/</guid>
+      <description>&lt;p&gt;包含整合过程和通用工具类&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
