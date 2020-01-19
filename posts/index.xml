@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>Angular-基础语法</title>
-      <link>https://WorkingNiu.github.io/2019/12/angular-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/angular-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Axios常见封装方法</title>
       <link>https://WorkingNiu.github.io/2019/12/axios%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
@@ -69,42 +60,6 @@
     </item>
     
     <item>
-      <title>TypeScript-基础语法</title>
-      <link>https://WorkingNiu.github.io/2019/12/typescript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/typescript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vue-router</title>
-      <link>https://WorkingNiu.github.io/2019/12/vue-router/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/vue-router/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vuex</title>
-      <link>https://WorkingNiu.github.io/2019/12/vuex/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/vuex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>一次搞懂ES6新特性</title>
-      <link>https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82es6%E6%96%B0%E7%89%B9%E6%80%A7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>保姆式从零构建Vue项目教学</title>
       <link>https://WorkingNiu.github.io/2019/12/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/</link>
       <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
@@ -122,15 +77,6 @@
       <guid>https://WorkingNiu.github.io/2019/12/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/</guid>
       <description>&lt;p&gt;个人收集的一些vue面试题。&lt;/p&gt;
 &lt;p&gt;很多讲的不够深入，如有错误欢迎指正🙌&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>微信小程序-基础语法</title>
-      <link>https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-      <description></description>
     </item>
     
     <item>
