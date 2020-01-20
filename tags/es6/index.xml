@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript on WorkingNiu的博客</title>
-    <link>https://WorkingNiu.github.io/tags/javascript/</link>
-    <description>Recent content in JavaScript on WorkingNiu的博客</description>
+    <title>ES6 on WorkingNiu的博客</title>
+    <link>https://WorkingNiu.github.io/tags/es6/</link>
+    <description>Recent content in ES6 on WorkingNiu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sun, 29 Dec 2019 15:01:12 +0800</lastBuildDate>
     
-	<atom:link href="https://WorkingNiu.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://WorkingNiu.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>async/await使用理解</title>
-      <link>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</link>
-      <pubDate>Sun, 29 Dec 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/12/async_await%E4%BD%BF%E7%94%A8%E7%90%86%E8%A7%A3/</guid>
-      <description>&lt;p&gt;es7提供的一种解决异步操作的方案&lt;/p&gt;
-&lt;p&gt;业务中有时会用到&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>快速上手ES6</title>

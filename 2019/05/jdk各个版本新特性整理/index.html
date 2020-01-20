@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>悲观锁和乐观锁 | WorkingNiu的博客</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JDK各个版本新特性整理 | WorkingNiu的博客</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noodp" />
 <meta name="Description" content="梁仲乾的个人博客">
-<link rel="next" href="https://WorkingNiu.github.io/2019/05/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" />
-<link rel="canonical" href="https://WorkingNiu.github.io/2019/01/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/" />
+<link rel="prev" href="https://WorkingNiu.github.io/2019/01/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/" />
+<link rel="next" href="https://WorkingNiu.github.io/2019/08/%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95/" />
+<link rel="canonical" href="https://WorkingNiu.github.io/2019/05/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -17,16 +18,16 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="悲观锁和乐观锁"/>
-<meta name="twitter:description" content="经常遇到各种锁,稍微整理下"/>
+<meta name="twitter:title" content="JDK各个版本新特性整理"/>
+<meta name="twitter:description" content="学习整理笔记"/>
 <script type="application/ld+json">
     {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "悲观锁和乐观锁",
+    "headline": "JDK各个版本新特性整理",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https:\/\/WorkingNiu.github.io\/2019\/01\/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81\/"
+        "@id": "https:\/\/WorkingNiu.github.io\/2019\/05\/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86\/"
     },
     
         "image": {
@@ -38,15 +39,15 @@
     
     "genre": "posts",
     
-        "keywords": "锁",
+        "keywords": "Java",
     
-    "wordcount":  868 ,
-    "url": "https:\/\/WorkingNiu.github.io\/2019\/01\/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81\/",
+    "wordcount":  1419 ,
+    "url": "https:\/\/WorkingNiu.github.io\/2019\/05\/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86\/",
     
-        "datePublished": "2019-01-15T15:01:12\x2b08:00",
+        "datePublished": "2019-05-29T15:01:12\x2b08:00",
     
     
-        "dateModified": "2019-01-15T15:01:12\x2b08:00",
+        "dateModified": "2019-05-29T15:01:12\x2b08:00",
     
     
         "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
@@ -127,21 +128,21 @@
     
 
     <article class="post-warp">
-        <h1 class="post-title animated flipInX">悲观锁和乐观锁</h1>
+        <h1 class="post-title animated flipInX">JDK各个版本新特性整理</h1>
 
         <div class="post-meta">
             <div class="post-meta-main">
                 <a class="author" href="https://WorkingNiu.github.io" rel="author"><i class="fas fa-user-circle fa-fw"></i>WorkingNiu&nbsp;</a>
                 <span class="post-category">
                         收录于
-                        <i class="far fa-folder fa-fw"></i><a href="https://WorkingNiu.github.io/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+                        <i class="far fa-folder fa-fw"></i><a href="https://WorkingNiu.github.io/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/">后端技术</a>
                             
                     </span>
             </div>
             <div class="post-meta-other">
-                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-01-15>2019-01-15</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 868 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-05-29>2019-05-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1419 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
         </div>
 
         
@@ -151,17 +152,13 @@
                 <div class="post-toc-content always-active">
                     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">悲观锁</a>
-      <ul>
-        <li><a href="#heading-1">行锁</a></li>
-        <li><a href="#heading-2">表锁</a></li>
-        <li><a href="#heading-3">页锁</a></li>
-        <li><a href="#heading-4">共享锁</a></li>
-        <li><a href="#heading-5">排他锁</a></li>
-      </ul>
-    </li>
-    <li><a href="#heading-6">乐观锁</a></li>
-    <li><a href="#heading-7">总结</a></li>
+    <li><a href="#jdk-5">JDK 5</a></li>
+    <li><a href="#jdk-6">JDK 6</a></li>
+    <li><a href="#jdk-7">JDK 7</a></li>
+    <li><a href="#jdk-8">JDK 8</a></li>
+    <li><a href="#jdk-9">JDK 9</a></li>
+    <li><a href="#jdk-10">JDK 10</a></li>
+    <li><a href="#jdk-11">JDK 11</a></li>
   </ul>
 </nav>
                 </div>
@@ -174,17 +171,13 @@
                         
                         <nav id="TableOfContentsMobile">
   <ul>
-    <li><a href="#heading">悲观锁</a>
-      <ul>
-        <li><a href="#heading-1">行锁</a></li>
-        <li><a href="#heading-2">表锁</a></li>
-        <li><a href="#heading-3">页锁</a></li>
-        <li><a href="#heading-4">共享锁</a></li>
-        <li><a href="#heading-5">排他锁</a></li>
-      </ul>
-    </li>
-    <li><a href="#heading-6">乐观锁</a></li>
-    <li><a href="#heading-7">总结</a></li>
+    <li><a href="#jdk-5">JDK 5</a></li>
+    <li><a href="#jdk-6">JDK 6</a></li>
+    <li><a href="#jdk-7">JDK 7</a></li>
+    <li><a href="#jdk-8">JDK 8</a></li>
+    <li><a href="#jdk-9">JDK 9</a></li>
+    <li><a href="#jdk-10">JDK 10</a></li>
+    <li><a href="#jdk-11">JDK 11</a></li>
   </ul>
 </nav>
                     </div>
@@ -217,45 +210,93 @@
             
             
             
-            <p>经常遇到各种锁,稍微整理下</p>
-<a class="post-dummy-target" id="heading"></a><h2>悲观锁</h2>
-<p>顾名思义，很悲观，就是每次拿数据的时候都认为别的线程会修改数据，所以在每次拿的时候都会给数据上锁。上锁之后，当别的线程想要拿数据时，就会阻塞，直到给数据上锁的线程将事务提交或者回滚。传统的关系型数据库里就用到了很多这种锁机制，比如行锁，表锁，共享锁，排他锁等，都是在做操作之前先上锁。</p>
-<a class="post-dummy-target" id="heading-1"></a><h3>行锁</h3>
-<p>下面演示行锁，打开两个mysql命令行界面，两个线程分别执行如下操作：（左边先执行）</p>
-<p><img src="/2019/01/15/1.png" alt="Local Picture" title="Local Picture"></p>
-<p>左边的线程，在事务中通过select for update语句给sid = 1的数据行上了锁。右边的线程此时可以使用select语句读取数据，但是如果也使用select for update语句，就会阻塞，使用update，add，delete也会阻塞。 
-当左边的线程将事务提交（或者回滚），右边的线程就会获取锁，线程不再阻塞：</p>
-<p><img src="/2019/01/15/2.png" alt="Local Picture" title="Local Picture"></p>
-<p>此时，右边的线程获取锁，左边的线程如果执行类似操作，也会被阻塞：</p>
-<p><img src="/2019/01/15/3.png" alt="Local Picture" title="Local Picture"></p>
-<a class="post-dummy-target" id="heading-2"></a><h3>表锁</h3>
-<p>上述例子中，如果使用如下语句就是使用的表锁：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">student</span> <span class="k">for</span> <span class="k">update</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><a class="post-dummy-target" id="heading-3"></a><h3>页锁</h3>
-<p>行锁锁指定行，表锁锁整张表，页锁是折中实现，即一次锁定相邻的一组记录。</p>
-<a class="post-dummy-target" id="heading-4"></a><h3>共享锁</h3>
-<p>共享锁又称为读锁，一个线程给数据加上共享锁后，其他线程只能读数据，不能修改。</p>
-<a class="post-dummy-target" id="heading-5"></a><h3>排他锁</h3>
-<p>排他锁又称为写锁，和共享锁的区别在于，其他线程既不能读也不能修改。</p>
-<a class="post-dummy-target" id="heading-6"></a><h2>乐观锁</h2>
-<p>乐观锁其实不会上锁。顾名思义，很乐观，它默认别的线程不会修改数据，所以不会上锁。只是在更新前去判断别的线程在此期间有没有修改数据，如果修改了，会交给业务层去处理。 
-常用的实现方式是使用版本戳，例如在一张表中添加一个整型字段version，每更新version++，比如某个时刻version=1，线程A读取了此version=1，线程B也读取了此version=1，当线程A更新数据之前，判断version仍然为1，更新成功，version++变为2，但是当线程B再提交更新时，发现version变为2了，与之前读的version=1不一致，就知道有别的线程更新了数据，这个时候就会进行业务逻辑的处理。</p>
-<a class="post-dummy-target" id="heading-7"></a><h2>总结</h2>
-<p>通常情况下，写操作较少时，使用乐观锁，写操作较多时，使用悲观锁</p>
+            <p>学习整理笔记</p>
+<a class="post-dummy-target" id="jdk-5"></a><h2>JDK 5</h2>
+<p>（1）泛型</p>
+<p>  通过引入泛型，我们将获得编译时类型的安全和运行时更小地抛出ClassCastExceptions的可能。</p>
+<p>（2）foreach，更简洁的for循环</p>
+<p>（3）自动拆箱装箱</p>
+<p>  自动装箱：Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。原始类型：byte,short,char,int,long,float,double,boolean。对应的封装类：Byte,Short,Character,Integer,Long,Float,Double,Boolean。</p>
+<p>（4）枚举</p>
+<p>（5）静态导入</p>
+<p>（6）元数据</p>
+<p>（7）线程池</p>
+<p>（8）Java Generics</p>
+<a class="post-dummy-target" id="jdk-6"></a><h2>JDK 6</h2>
+<p>（1）DestTop类和SystemTray类</p>
+<p>（2）使用JAXB2来实现对象与XML之间的映射</p>
+<p>（3）StAX</p>
+<p>（4）使用Complier API</p>
+<p>（5）轻量级的Http Server API</p>
+<p>（6）插入式注解处理API(Pluggable Annotation Processing API)</p>
+<p>（7）用Console开发控制台程序</p>
+<p>（8）对脚本语言的支持</p>
+<p>（9）Common Annotations</p>
+<a class="post-dummy-target" id="jdk-7"></a><h2>JDK 7</h2>
+<p>（1）switch中可以使用字串了</p>
+<p>（2）泛型实例化类型自动推断</p>
+<p>（3）新增一些取环境信息的工具方法</p>
+<p>（4）Boolean类型反转，空指针安全,参与位运算</p>
+<p>（5）两个char间的equals</p>
+<p>（6）安全的加减乘除</p>
+<p>（7）二进制变量的表示,支持将整数类型用二进制来表示，用0b开头。</p>
+<p>（8）Try-with-resource语句</p>
+<p>（9）使用一个catch语言来处理多种异常类型</p>
+<a class="post-dummy-target" id="jdk-8"></a><h2>JDK 8</h2>
+<p>（1）接口的默认方法</p>
+<p>（2）Lambda 表达式</p>
+<p>（3）函数式接口</p>
+<p>（4）方法与构造函数引用</p>
+<p>（5）Lambda 作用域</p>
+<p>（6）访问局部变量</p>
+<p>（7）访问对象字段与静态变量</p>
+<p>（8）Date API</p>
+<p>（9）多重Annotation 注解</p>
+<p>（10）访问接口的默认方法</p>
+<a class="post-dummy-target" id="jdk-9"></a><h2>JDK 9</h2>
+<p>（1）Java 平台级模块系统</p>
+<p>（2）Linking</p>
+<p>（3）JShell : 交互式 Java REPL</p>
+<p>（4）改进的 Javadoc</p>
+<p>（5）集合工厂方法</p>
+<p>（6）改进的 Stream API</p>
+<p>（7）私有接口方法</p>
+<p>（8）HTTP/2</p>
+<p>（9）多版本兼容 JAR</p>
+<a class="post-dummy-target" id="jdk-10"></a><h2>JDK 10</h2>
+<p>（1）局部变量类型推断</p>
+<p>（2）将JDK多存储库合并为单储存库</p>
+<p>（3）垃圾回收接口</p>
+<p>（4）并行Full GC 的G1</p>
+<p>（5）应用数据共享</p>
+<p>（6）线程局部管控</p>
+<p>（7）移除Native-Header Generation Tool （javah）</p>
+<p>（8）Unicode 标签扩展</p>
+<p>（9）备用内存设备上分配堆内存</p>
+<p>（10）基于实验JAVA 的JIT 编译器</p>
+<p>（11）Root 证书</p>
+<p>（12）基于时间的版本控制</p>
+<a class="post-dummy-target" id="jdk-11"></a><h2>JDK 11</h2>
+<p>（1）Local Var</p>
+<p>  Lambda表达式中，可以使用var关键字来标识变量，变量类型由编译器自行推断。</p>
+<p>（2）HttpClient</p>
+<p>  JDK11的新的HttpClient支持HTTP/2和WebSocket，并且可以使用异步接口。</p>
+<p>（3）List API</p>
+<p>  对于List接口，新增了一个of(T…)接口，用于快速创建List对象。</p>
+<p>（4）读写文件</p>
+<p>  对Files类增加了writeString和readString两个静态方法，可以直接把String写入文件，或者把整个文件读出为一个String。</p>
+<p>（5）String API</p>
+<p>  String新增了strip()方法，和trim()相比，strip()可以去掉Unicode空格，例如，中文空格。</p>
+<p>  新增isBlank()方法，可判断字符串是不是“空白”字符串。</p>
+<p>  新增lines()方法，可以非常方便地按行分割字符串。</p>
+<p>  新增repeat()方法，可以指定重复次数。</p>
         </div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2019-01-15 更新</span>
+                <span>本文于 2019-05-29 更新</span>
             </div>
             <div class="post-info-license">
                 
@@ -269,17 +310,17 @@
                 
                     <span>
     
-        <a href="//twitter.com/share?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f01%2f%25E6%2582%25B2%25E8%25A7%2582%25E9%2594%2581%25E5%2592%258C%25E4%25B9%2590%25E8%25A7%2582%25E9%2594%2581%2f&amp;text=%e6%82%b2%e8%a7%82%e9%94%81%e5%92%8c%e4%b9%90%e8%a7%82%e9%94%81&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f05%2fjdk%25E5%2590%2584%25E4%25B8%25AA%25E7%2589%2588%25E6%259C%25AC%25E6%2596%25B0%25E7%2589%25B9%25E6%2580%25A7%25E6%2595%25B4%25E7%2590%2586%2f&amp;text=JDK%e5%90%84%e4%b8%aa%e7%89%88%e6%9c%ac%e6%96%b0%e7%89%b9%e6%80%a7%e6%95%b4%e7%90%86&amp;via=" target="_blank" title="Share on Twitter">
             <i class="fab fa-twitter fa-fw"></i>
         </a>
     
     
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f01%2f%25E6%2582%25B2%25E8%25A7%2582%25E9%2594%2581%25E5%2592%258C%25E4%25B9%2590%25E8%25A7%2582%25E9%2594%2581%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f05%2fjdk%25E5%2590%2584%25E4%25B8%25AA%25E7%2589%2588%25E6%259C%25AC%25E6%2596%25B0%25E7%2589%25B9%25E6%2580%25A7%25E6%2595%25B4%25E7%2590%2586%2f" target="_blank" title="Share on Facebook">
             <i class="fab fa-facebook-square fa-fw"></i>
         </a>
     
     
-        <a href="//reddit.com/submit?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f01%2f%25E6%2582%25B2%25E8%25A7%2582%25E9%2594%2581%25E5%2592%258C%25E4%25B9%2590%25E8%25A7%2582%25E9%2594%2581%2f&amp;title=%e6%82%b2%e8%a7%82%e9%94%81%e5%92%8c%e4%b9%90%e8%a7%82%e9%94%81" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fWorkingNiu.github.io%2f2019%2f05%2fjdk%25E5%2590%2584%25E4%25B8%25AA%25E7%2589%2588%25E6%259C%25AC%25E6%2596%25B0%25E7%2589%25B9%25E6%2580%25A7%25E6%2595%25B4%25E7%2590%2586%2f&amp;title=JDK%e5%90%84%e4%b8%aa%e7%89%88%e6%9c%ac%e6%96%b0%e7%89%b9%e6%80%a7%e6%95%b4%e7%90%86" target="_blank" title="Share on Reddit">
             <i class="fab fa-reddit fa-fw"></i>
         </a>
     
@@ -301,7 +342,7 @@
             
                 
                     <span class="tag">
-                        <a href="https://WorkingNiu.github.io/tags/%E9%94%81/"><i class="fas fa-tag fa-fw"></i>锁</a>
+                        <a href="https://WorkingNiu.github.io/tags/java/"><i class="fas fa-tag fa-fw"></i>Java</a>
                     </span>
                 
             
@@ -313,8 +354,10 @@
 
     <div class="post-nav">
         
+            <a href="https://WorkingNiu.github.io/2019/01/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/" class="prev" rel="prev" title="悲观锁和乐观锁"><i class="fas fa-angle-left fa-fw"></i>悲观锁和乐观锁</a>
         
-            <a href="https://WorkingNiu.github.io/2019/05/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" class="next" rel="next" title="JDK各个版本新特性整理">JDK各个版本新特性整理<i class="fas fa-angle-right fa-fw"></i></a>
+        
+            <a href="https://WorkingNiu.github.io/2019/08/%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="next" rel="next" title="Test Page">Test Page<i class="fas fa-angle-right fa-fw"></i></a>
         
     </div>
 </div>
