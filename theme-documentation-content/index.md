@@ -362,9 +362,6 @@ $$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
 
 另一个例子是:
 
-```markdown
-[link{{??}]}(#escape-character)
-```
 
 呈现的输出效果如下:
 
