@@ -362,7 +362,6 @@ $$ \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $$
 
 另一个例子是:
 
-
 呈现的输出效果如下:
 
 **[link{?]}(#escape-character)** 而不是 **[link](#escape-character)**.
