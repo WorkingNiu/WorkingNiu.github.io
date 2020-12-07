@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>JDK各个版本新特性整理 - 梁仲乾的博客</title><meta name="Description" content="梁仲乾的博客"><meta property="og:title" content="JDK各个版本新特性整理" />
+<meta property="og:description" content="学习整理笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" />
+<meta property="og:image" content="https://example.com/logo.png"/>
+<meta property="article:published_time" content="2019-05-29T15:01:12+08:00" />
+<meta property="article:modified_time" content="2019-05-29T15:01:12+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/logo.png"/>
+
+<meta name="twitter:title" content="JDK各个版本新特性整理"/>
+<meta name="twitter:description" content="学习整理笔记"/>
+<meta name="application-name" content="梁仲乾的博客">
+<meta name="apple-mobile-web-app-title" content="梁仲乾的博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" /><link rel="prev" href="https://example.com/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/" /><link rel="next" href="https://example.com/markdown%E8%AF%AD%E6%B3%95/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JDK各个版本新特性整理",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/example.com\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Java","wordcount":  1419 ,
+        "url": "https:\/\/example.com\/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86\/","datePublished": "2019-05-29T15:01:12+08:00","dateModified": "2019-05-29T15:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "梁仲乾","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/example.com\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> 所有文章 </a><a class="menu-item" href="/tags"> 标签 </a><a class="menu-item" href="/categories"> 分类 </a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts" title="">所有文章</a><a class="menu-item" href="/tags" title="">标签</a><a class="menu-item" href="/categories" title="">分类</a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">JDK各个版本新特性整理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>后端技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-05-29">2019-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1419 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#jdk-5">JDK 5</a></li>
+    <li><a href="#jdk-6">JDK 6</a></li>
+    <li><a href="#jdk-7">JDK 7</a></li>
+    <li><a href="#jdk-8">JDK 8</a></li>
+    <li><a href="#jdk-9">JDK 9</a></li>
+    <li><a href="#jdk-10">JDK 10</a></li>
+    <li><a href="#jdk-11">JDK 11</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>学习整理笔记</p>
+<h2 id="jdk-5">JDK 5</h2>
+<p>（1）泛型</p>
+<p>  通过引入泛型，我们将获得编译时类型的安全和运行时更小地抛出ClassCastExceptions的可能。</p>
+<p>（2）foreach，更简洁的for循环</p>
+<p>（3）自动拆箱装箱</p>
+<p>  自动装箱：Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。原始类型：byte,short,char,int,long,float,double,boolean。对应的封装类：Byte,Short,Character,Integer,Long,Float,Double,Boolean。</p>
+<p>（4）枚举</p>
+<p>（5）静态导入</p>
+<p>（6）元数据</p>
+<p>（7）线程池</p>
+<p>（8）Java Generics</p>
+<h2 id="jdk-6">JDK 6</h2>
+<p>（1）DestTop类和SystemTray类</p>
+<p>（2）使用JAXB2来实现对象与XML之间的映射</p>
+<p>（3）StAX</p>
+<p>（4）使用Complier API</p>
+<p>（5）轻量级的Http Server API</p>
+<p>（6）插入式注解处理API(Pluggable Annotation Processing API)</p>
+<p>（7）用Console开发控制台程序</p>
+<p>（8）对脚本语言的支持</p>
+<p>（9）Common Annotations</p>
+<h2 id="jdk-7">JDK 7</h2>
+<p>（1）switch中可以使用字串了</p>
+<p>（2）泛型实例化类型自动推断</p>
+<p>（3）新增一些取环境信息的工具方法</p>
+<p>（4）Boolean类型反转，空指针安全,参与位运算</p>
+<p>（5）两个char间的equals</p>
+<p>（6）安全的加减乘除</p>
+<p>（7）二进制变量的表示,支持将整数类型用二进制来表示，用0b开头。</p>
+<p>（8）Try-with-resource语句</p>
+<p>（9）使用一个catch语言来处理多种异常类型</p>
+<h2 id="jdk-8">JDK 8</h2>
+<p>（1）接口的默认方法</p>
+<p>（2）Lambda 表达式</p>
+<p>（3）函数式接口</p>
+<p>（4）方法与构造函数引用</p>
+<p>（5）Lambda 作用域</p>
+<p>（6）访问局部变量</p>
+<p>（7）访问对象字段与静态变量</p>
+<p>（8）Date API</p>
+<p>（9）多重Annotation 注解</p>
+<p>（10）访问接口的默认方法</p>
+<h2 id="jdk-9">JDK 9</h2>
+<p>（1）Java 平台级模块系统</p>
+<p>（2）Linking</p>
+<p>（3）JShell : 交互式 Java REPL</p>
+<p>（4）改进的 Javadoc</p>
+<p>（5）集合工厂方法</p>
+<p>（6）改进的 Stream API</p>
+<p>（7）私有接口方法</p>
+<p>（8）HTTP/2</p>
+<p>（9）多版本兼容 JAR</p>
+<h2 id="jdk-10">JDK 10</h2>
+<p>（1）局部变量类型推断</p>
+<p>（2）将JDK多存储库合并为单储存库</p>
+<p>（3）垃圾回收接口</p>
+<p>（4）并行Full GC 的G1</p>
+<p>（5）应用数据共享</p>
+<p>（6）线程局部管控</p>
+<p>（7）移除Native-Header Generation Tool （javah）</p>
+<p>（8）Unicode 标签扩展</p>
+<p>（9）备用内存设备上分配堆内存</p>
+<p>（10）基于实验JAVA 的JIT 编译器</p>
+<p>（11）Root 证书</p>
+<p>（12）基于时间的版本控制</p>
+<h2 id="jdk-11">JDK 11</h2>
+<p>（1）Local Var</p>
+<p>  Lambda表达式中，可以使用var关键字来标识变量，变量类型由编译器自行推断。</p>
+<p>（2）HttpClient</p>
+<p>  JDK11的新的HttpClient支持HTTP/2和WebSocket，并且可以使用异步接口。</p>
+<p>（3）List API</p>
+<p>  对于List接口，新增了一个of(T…)接口，用于快速创建List对象。</p>
+<p>（4）读写文件</p>
+<p>  对Files类增加了writeString和readString两个静态方法，可以直接把String写入文件，或者把整个文件读出为一个String。</p>
+<p>（5）String API</p>
+<p>  String新增了strip()方法，和trim()相比，strip()可以去掉Unicode空格，例如，中文空格。</p>
+<p>  新增isBlank()方法，可判断字符串是不是“空白”字符串。</p>
+<p>  新增lines()方法，可以非常方便地按行分割字符串。</p>
+<p>  新增repeat()方法，可以指定重复次数。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-05-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" data-title="JDK各个版本新特性整理" data-hashtags="Java"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" data-title="JDK各个版本新特性整理"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" data-title="JDK各个版本新特性整理"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/" data-title="JDK各个版本新特性整理"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/" class="prev" rel="prev" title="悲观锁和乐观锁"><i class="fas fa-angle-left fa-fw"></i>悲观锁和乐观锁</a>
+            <a href="/markdown%E8%AF%AD%E6%B3%95/" class="next" rel="next" title="Markdown语法">Markdown语法<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

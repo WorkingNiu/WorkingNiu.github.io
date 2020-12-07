@@ -1,25 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>锁 on WorkingCoder的博客</title>
-    <link>https://WorkingNiu.github.io/tags/%E9%94%81/</link>
-    <description>Recent content in 锁 on WorkingCoder的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 15 Jan 2019 15:01:12 +0800</lastBuildDate>
-    
-	<atom:link href="https://WorkingNiu.github.io/tags/%E9%94%81/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>悲观锁和乐观锁</title>
-      <link>https://WorkingNiu.github.io/2019/01/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/</link>
-      <pubDate>Tue, 15 Jan 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/01/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/</guid>
-      <description>&lt;p&gt;经常遇到各种锁,稍微整理下&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>锁 - 标签 - 梁仲乾的博客</title>
+        <link>https://example.com/tags/%E9%94%81/</link>
+        <description>锁 - 标签 - 梁仲乾的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Jan 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E9%94%81/" rel="self" type="application/rss+xml" /><item>
+    <title>悲观锁和乐观锁</title>
+    <link>https://example.com/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/</link>
+    <pubDate>Tue, 15 Jan 2019 15:01:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/</guid>
+    <description><![CDATA[<p>经常遇到各种锁,稍微整理下</p>]]></description>
+</item></channel>
 </rss>

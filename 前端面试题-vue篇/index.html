@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>前端面试题-Vue篇 - 梁仲乾的博客</title><meta name="Description" content="个人收集学习的前端面试题，如有错误欢迎指出"><meta property="og:title" content="前端面试题-Vue篇" />
+<meta property="og:description" content="个人收集学习的前端面试题，如有错误欢迎指出" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" />
+<meta property="og:image" content="https://example.com/logo.png"/>
+<meta property="article:published_time" content="2019-12-29T15:01:12+08:00" />
+<meta property="article:modified_time" content="2019-12-29T15:01:12+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/logo.png"/>
+
+<meta name="twitter:title" content="前端面试题-Vue篇"/>
+<meta name="twitter:description" content="个人收集学习的前端面试题，如有错误欢迎指出"/>
+<meta name="application-name" content="梁仲乾的博客">
+<meta name="apple-mobile-web-app-title" content="梁仲乾的博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" /><link rel="prev" href="https://example.com/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E6%80%BB%E7%BB%93/" /><link rel="next" href="https://example.com/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "前端面试题-Vue篇",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/example.com\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "面试","wordcount":  2033 ,
+        "url": "https:\/\/example.com\/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87\/","datePublished": "2019-12-29T15:01:12+08:00","dateModified": "2019-12-29T15:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "梁仲乾","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/example.com\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": "个人收集学习的前端面试题，如有错误欢迎指出"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> 所有文章 </a><a class="menu-item" href="/tags"> 标签 </a><a class="menu-item" href="/categories"> 分类 </a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts" title="">所有文章</a><a class="menu-item" href="/tags" title="">标签</a><a class="menu-item" href="/categories" title="">分类</a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">前端面试题-Vue篇</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>前端技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-29">2019-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2033 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#vue两个核心">vue两个核心</a></li>
+    <li><a href="#router和route">router和route</a></li>
+    <li><a href="#keep-alive">keep-alive</a>
+      <ul>
+        <li><a href="#appvue">app.vue</a></li>
+        <li><a href="#indexjs">index.js</a></li>
+      </ul>
+    </li>
+    <li><a href="#vue-router-导航钩子">vue-router 导航钩子</a>
+      <ul>
+        <li><a href="#全局级钩子">全局级钩子</a></li>
+        <li><a href="#路由级钩子">路由级钩子</a></li>
+        <li><a href="#组件级钩子">组件级钩子</a></li>
+      </ul>
+    </li>
+    <li><a href="#单页应用优缺点">单页应用优缺点</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#生命周期">生命周期</a>
+      <ul>
+        <li><a href="#created创建">created(创建)</a></li>
+        <li><a href="#beforemount挂载前">beforeMount(挂载前)</a></li>
+        <li><a href="#mounted挂载">mounted(挂载)</a></li>
+        <li><a href="#beforeupdate更新前">beforeUpdate(更新前)</a></li>
+        <li><a href="#updated更新">updated(更新)</a></li>
+        <li><a href="#beforedestroy销毁前">beforeDestroy(销毁前)</a></li>
+        <li><a href="#destroyed销毁">Destroyed(销毁)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>个人收集的一些vue面试题。</p>
+<p>很多讲的不够深入，如有错误欢迎指正🙌</p>
+<h2 id="vue两个核心">vue两个核心</h2>
+<p>数据驱动 组件系统</p>
+<h2 id="router和route">router和route</h2>
+<p>router为VueRouter的实例，相当于一个全局的路由器对象，里面含有很多属性和子对象，例如history对象，经常用的跳转链接就可以用this.$router.push，和router-link跳转一样。。。
+route相当于当前正在跳转的路由对象，可以从里面获取name,path,params,query等</p>
+<h2 id="keep-alive">keep-alive</h2>
+<p>当它包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。在组件切换过程中将状态保留在内存中，防止重复渲染DOM，减少加载时间及性能消耗，提高用户体验性和 transition 相似，keep-alive 是一个抽象组件：它自身不会渲染成一个 DOM 元素，也不会出现在父组件链中。主要在app,vue中配置，通过属性判断是否使用缓存.</p>
+<p>使用示例</p>
+<h3 id="appvue">app.vue</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vue" data-lang="vue"><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="c">&lt;!--</span><span class="nx">这里是需要keepalive的</span><span class="o">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">keep-alive</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">router-view</span> <span class="nt">v-if</span><span class="s">=&#34;$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="err">&lt;/</span><span class="na">router</span><span class="nt">-view</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">keep-alive</span><span class="p">&gt;</span>
+<span class="c">&lt;!--</span> <span class="nx">这里不会被keepAlive</span> <span class="o">--&gt;</span>
+<span class="p">&lt;</span><span class="nt">router-view</span> <span class="nt">v-if</span><span class="s">=&#34;!$route.meta.keepAlive&#34;</span><span class="p">&gt;</span><span class="err">&lt;/</span><span class="na">router</span><span class="nt">-view</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="indexjs">index.js</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">meta</span><span class="o">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="o">:</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">// 这个是需要keepalive的
+</span><span class="c1"></span><span class="p">}</span><span class="err">，</span>
+<span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="p">,</span>
+    <span class="nx">meta</span><span class="o">:</span> <span class="p">{</span><span class="nx">keepAlive</span><span class="o">:</span> <span class="kc">false</span><span class="p">}</span> <span class="c1">// 这是不会被keepalive的
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="vue-router-导航钩子">vue-router 导航钩子</h2>
+<p>vue-router 导航钩子包括全局级钩子、路由级钩子、组件级钩子</p>
+<h3 id="全局级钩子">全局级钩子</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">router</span> <span class="nx">from</span> <span class="s1">&#39;../router&#39;</span>
+<span class="kr">import</span> <span class="nx">NProgress</span> <span class="nx">from</span> <span class="s1">&#39;nprogress&#39;</span> <span class="c1">// Progress 进度条组件
+</span><span class="c1"></span><span class="kr">import</span> <span class="s1">&#39;nprogress/nprogress.css&#39;</span><span class="c1">// Progress 进度条样式
+</span><span class="c1"></span>
+<span class="cm">/**
+</span><span class="cm"> * 路由守卫
+</span><span class="cm"> */</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="cm">/**
+</span><span class="cm">   to: (Route路由对象) 即将要进入的目标 路由对象 to对象下面的属性： path params query hash fullPath matched name meta
+</span><span class="cm">   from: (Route路由对象) 当前导航正要离开的路由
+</span><span class="cm">   next: (Function函数) 一定要调用该方法来 resolve 这个钩子。 调用方法：next(参数或者空) ***必须调用
+</span><span class="cm">
+</span><span class="cm">   next(无参数的时候): 进行管道中的下一个钩子，如果走到最后一个钩子函数，那么 导航的状态就是 confirmed （确认的）
+</span><span class="cm">   next(&#39;/404&#39;) 或者 next({ path: &#39;/404&#39; }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。
+</span><span class="cm">   */</span>
+    <span class="nx">NProgress</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span><span class="c1">//开始进度条
+</span><span class="c1"></span>    <span class="cm">/**
+</span><span class="cm">     * 巴拉巴拉全局路由前的业务逻辑
+</span><span class="cm">     */</span>
+    <span class="nx">next</span><span class="p">()</span> <span class="c1">//记得next(),不然不走
+</span><span class="c1"></span>
+<span class="p">})</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">afterEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/**
+</span><span class="cm">     * 巴拉巴拉全局路由后的业务逻辑
+</span><span class="cm">     */</span>
+    <span class="nx">NProgress</span><span class="p">.</span><span class="nx">done</span><span class="p">()</span> <span class="c1">// 结束进度条
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="路由级钩子">路由级钩子</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
+<span class="kr">import</span> <span class="nx">Router</span> <span class="nx">from</span> <span class="s1">&#39;vue-router&#39;</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">)</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/login&#39;</span><span class="p">,</span>
+      <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@/views/login/login&#39;</span><span class="p">),</span>
+      <span class="nx">beforeEnter</span><span class="o">:</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)=&gt;{</span>
+        <span class="nx">next</span><span class="p">();</span>
+      <span class="p">},</span>
+      <span class="nx">hidden</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="组件级钩子">组件级钩子</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vue" data-lang="vue"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="nx">login页</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="p">{};},</span>
+        <span class="nx">mounted</span><span class="p">()</span> <span class="p">{},</span>
+        <span class="nx">methods</span><span class="o">:</span> <span class="p">{},</span>
+        <span class="nx">beforeRouteEnter</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 在渲染该组件的对应路由被 confirm 前调用
+</span><span class="c1"></span>            <span class="c1">// 不！能！获取组件实例 `this`
+</span><span class="c1"></span>            <span class="c1">// 因为当钩子执行前，组件实例还没被创建
+</span><span class="c1"></span>        <span class="p">},</span>
+        <span class="nx">beforeRouteUpdate</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 在当前路由改变，但是该组件被复用时调用
+</span><span class="c1"></span>            <span class="c1">// 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+</span><span class="c1"></span>            <span class="c1">// 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+</span><span class="c1"></span>            <span class="c1">// 可以访问组件实例 `this`
+</span><span class="c1"></span>        <span class="p">},</span>
+        <span class="nx">beforeRouteLeave</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 导航离开该组件的对应路由时调用
+</span><span class="c1"></span>            <span class="c1">// 可以访问组件实例 `this`
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="单页应用优缺点">单页应用优缺点</h2>
+<h3 id="优点">优点</h3>
+<p>1速度快，用户体验好</p>
+<p>2对服务器压力小</p>
+<p>3适用于前后端分离，可以对应多端</p>
+<h3 id="缺点">缺点</h3>
+<p>1首次记载时间长</p>
+<p>2seo支持不好</p>
+<h2 id="生命周期">生命周期</h2>
+<h3 id="created创建">created(创建)</h3>
+<p>数据data已经初始化完成，方法也已经可以调用，但是DOM为渲染。在这个周期里面如果进行请求是可以改变数据并渲染，由于DOM未挂载，请求过多或者占用时间过长会导致页面线上空白。</p>
+<h3 id="beforemount挂载前">beforeMount(挂载前)</h3>
+<p>DOM未完成挂载，数据也初始化完成，但是数据的双向绑定还是显示{{}}，这是因为Vue采用了Virtual DOM（虚拟Dom）技术。先占住了一个坑。</p>
+<h3 id="mounted挂载">mounted(挂载)</h3>
+<p>数据和DOM都完成挂载，在上一个周期占位的数据把值给渲染进去。一般请求会放在这个地方，因为这边请求改变数据之后刚好
+能渲染。</p>
+<h3 id="beforeupdate更新前">beforeUpdate(更新前)</h3>
+<p>只要是页面数据改变了都会触发，数据更新之前，页面数据还是原来的数据，当你请求赋值一个数据的时候会执行这个周期，如果没有数据改变不执行。</p>
+<h3 id="updated更新">updated(更新)</h3>
+<p>只要是页面数据改变了都会触发，数据更新完毕，页面的数据是更新完成的。beforeUpdate和updated要谨慎使用，因为页面更新数据的时候都会触发，在这里操作数据很影响性能和容易死循环。</p>
+<h3 id="beforedestroy销毁前">beforeDestroy(销毁前)</h3>
+<p>这个周期是在组件销毁之前执行，在我项目开发中，觉得这个其实有点类似路由钩子beforeRouterLeave,都是在路由离开的时候执行，只不过beforeDestroy无法阻止路由跳转，但是可以做一些路由离开的时候操作，因为这个周期里面还可以使用data和method。比如一个倒计时组件，如果在路由跳转的时候没有清除，这个定时器还是在的，这时候就可以在这个里面清除计时器。</p>
+<h3 id="destroyed销毁">Destroyed(销毁)</h3>
+<p>说实在的，我还真的不知道这个周期跟beforeDestroy有什么区别，我在这个周期里面调用data的数据和methods的方法都能调用，所以我会觉得跟beforeDestroy是一样的。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-12-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" data-title="前端面试题-Vue篇" data-hashtags="面试"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" data-hashtag="面试"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" data-title="前端面试题-Vue篇"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" data-title="前端面试题-Vue篇"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98-vue%E7%AF%87/" data-title="前端面试题-Vue篇"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%AC%E6%80%BB%E7%BB%93/" class="prev" rel="prev" title="微信小程序跳转总结"><i class="fas fa-angle-left fa-fw"></i>微信小程序跳转总结</a>
+            <a href="/%E4%BF%9D%E5%A7%86%E5%BC%8F%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E6%95%99%E5%AD%A6/" class="next" rel="next" title="从零构建Vue项目教学">从零构建Vue项目教学<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

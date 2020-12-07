@@ -1,26 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>语法 on WorkingCoder的博客</title>
-    <link>https://WorkingNiu.github.io/tags/%E8%AF%AD%E6%B3%95/</link>
-    <description>Recent content in 语法 on WorkingCoder的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 16:22:42 +0800</lastBuildDate>
-    
-	<atom:link href="https://WorkingNiu.github.io/tags/%E8%AF%AD%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Markdown语法</title>
-      <link>https://WorkingNiu.github.io/2019/08/markdown%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/08/markdown%E8%AF%AD%E6%B3%95/</guid>
-      <description>&lt;p&gt;这是一篇用于预览 :(fab fa-markdown): Markdown 基本语法的文章。&lt;/p&gt;
-&lt;p&gt;文章内容基于 &lt;a href=&#34;https://github.github.com/gfm&#34;&gt;GitHub Flavo红色 Markdown Spec&lt;/a&gt;。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>语法 - 标签 - 梁仲乾的博客</title>
+        <link>https://example.com/tags/%E8%AF%AD%E6%B3%95/</link>
+        <description>语法 - 标签 - 梁仲乾的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 25 Aug 2019 16:22:42 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E8%AF%AD%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>Markdown语法</title>
+    <link>https://example.com/markdown%E8%AF%AD%E6%B3%95/</link>
+    <pubDate>Sun, 25 Aug 2019 16:22:42 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/markdown%E8%AF%AD%E6%B3%95/</guid>
+    <description><![CDATA[<p>这是一篇用于预览 <i class="fab fa-markdown"></i>&nbsp;Markdown 基本语法的文章。</p>
+<p>文章内容基于 <a href="https://github.github.com/gfm" target="_blank" rel="noopener noreffer">GitHub Flavo红色 Markdown Spec</a>。</p>]]></description>
+</item></channel>
 </rss>

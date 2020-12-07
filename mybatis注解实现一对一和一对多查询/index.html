@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Mybatis注解实现一对一和一对多查询 - 梁仲乾的博客</title><meta name="Description" content="梁仲乾的博客"><meta property="og:title" content="Mybatis注解实现一对一和一对多查询" />
+<meta property="og:description" content="个人使用中一点总计，如有错误欢迎指出" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" />
+<meta property="og:image" content="https://example.com/logo.png"/>
+<meta property="article:published_time" content="2019-12-29T15:01:12+08:00" />
+<meta property="article:modified_time" content="2019-12-29T15:01:12+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/logo.png"/>
+
+<meta name="twitter:title" content="Mybatis注解实现一对一和一对多查询"/>
+<meta name="twitter:description" content="个人使用中一点总计，如有错误欢迎指出"/>
+<meta name="application-name" content="梁仲乾的博客">
+<meta name="apple-mobile-web-app-title" content="梁仲乾的博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" /><link rel="prev" href="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" /><link rel="next" href="https://example.com/%E4%B8%80%E6%AC%A1%E7%9C%8B%E6%87%82less/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Mybatis注解实现一对一和一对多查询",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/example.com\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Mybatis","wordcount":  1621 ,
+        "url": "https:\/\/example.com\/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2\/","datePublished": "2019-12-29T15:01:12+08:00","dateModified": "2019-12-29T15:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "梁仲乾","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/example.com\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> 所有文章 </a><a class="menu-item" href="/tags"> 标签 </a><a class="menu-item" href="/categories"> 分类 </a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts" title="">所有文章</a><a class="menu-item" href="/tags" title="">标签</a><a class="menu-item" href="/categories" title="">分类</a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Mybatis注解实现一对一和一对多查询</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>后端技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-29">2019-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1621 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-业务">1 业务</a></li>
+    <li><a href="#2-实体类">2 实体类</a></li>
+    <li><a href="#3-对应数据库表">3 对应数据库表</a></li>
+    <li><a href="#4-一对一映射">4 一对一映射</a></li>
+    <li><a href="#5-一对多查询">5 一对多查询</a></li>
+    <li><a href="#5-总结">5 总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>个人使用中一点总计，如有错误欢迎指出</p>
+<h2 id="1-业务">1 业务</h2>
+<p>系统中的用户user都有唯一对应的地址信息address，每个用户可以有多量车car，类似如下结构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">|-- user
+    |-- address
+    |-- carList
+        |-- car1
+        |-- car2
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-实体类">2 实体类</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">public</span> <span class="kr">class</span> <span class="nx">Address</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">Long</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">province</span><span class="p">;</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">city</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">public</span> <span class="kr">class</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">Long</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">color</span><span class="p">;</span>
+    <span class="kr">private</span> <span class="nb">String</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="c1">//用户id
+</span><span class="c1"></span>    <span class="kr">private</span> <span class="nx">Long</span> <span class="nx">userId</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">public</span> <span class="kr">class</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="kr">private</span> <span class="nx">Long</span> <span class="nx">id</span><span class="p">;</span>
+    <span class="c1">//地址信息，和用户是一对一的关系
+</span><span class="c1"></span>    <span class="kr">private</span> <span class="nx">Address</span> <span class="nx">address</span><span class="p">;</span>
+    <span class="c1">//地址id
+</span><span class="c1"></span>    <span class="kr">private</span> <span class="nx">Long</span> <span class="nx">addressId</span><span class="p">;</span>
+    <span class="c1">//用户拥有的车，和用户是一对多的关系
+</span><span class="c1"></span>    <span class="kr">private</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">Car</span><span class="o">&gt;</span> <span class="nx">cars</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3-对应数据库表">3 对应数据库表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">CREATE TABLE IF NOT EXISTS <span class="sb">`user`</span> (
+  <span class="sb">`id`</span> int(11) NOT NULL AUTO_INCREMENT,
+  <span class="sb">`nick_name`</span> varchar(50) DEFAULT NULL,
+  <span class="sb">`address_id`</span> int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS <span class="sb">`address`</span> (
+  <span class="sb">`id`</span> int(11) NOT NULL AUTO_INCREMENT,
+  <span class="sb">`province`</span> varchar(50) DEFAULT NULL,
+  <span class="sb">`city`</span> varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS <span class="sb">`car`</span> (
+  <span class="sb">`id`</span> int(11) NOT NULL AUTO_INCREMENT,
+  <span class="sb">`color`</span> varchar(50) DEFAULT NULL,
+  <span class="sb">`name`</span> varchar(50) DEFAULT NULL,
+  <span class="sb">`user_id`</span> int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4-一对一映射">4 一对一映射</h2>
+<p>以获取用户的唯一地址为例，首先我们定义一个根据地址id查询地址的查询方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">public</span> <span class="kr">interface</span> <span class="nx">AddressRepository</span> <span class="p">{</span>
+    <span class="cm">/**
+</span><span class="cm">     * 根据地址id查询地址
+</span><span class="cm">     */</span>
+    <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `address` WHERE id = #{id}&#34;</span><span class="p">)</span>
+    <span class="nx">Address</span> <span class="nx">findAddressById</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们定义一个根据用户id查询用户的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">public</span> <span class="kr">interface</span> <span class="nx">UserRepository</span> <span class="p">{</span>
+    <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `user` where id = #{id}&#34;</span><span class="p">)</span>
+    <span class="nx">User</span> <span class="nx">findUserWithAddress</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个时候我们查询出来的user对象中的address属性是空的，和address并没有任何关联。
+那么我们要把user中的addressId传递给AddressRepository的查询地址的方法，
+然后把查询出的地址对象address赋值给user的address属性,那么我们怎么做呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="kr">public</span> <span class="kr">interface</span> <span class="nx">UserRepository</span> <span class="p">{</span>
+        <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `user` where id = #{id}&#34;</span><span class="p">)</span>
+        <span class="err">@</span><span class="nx">Results</span><span class="p">({</span>
+                <span class="err">@</span><span class="nx">Result</span><span class="p">(</span><span class="nx">property</span> <span class="o">=</span> <span class="s2">&#34;address&#34;</span><span class="p">,</span> <span class="nx">column</span> <span class="o">=</span> <span class="s2">&#34;address_id&#34;</span><span class="p">,</span>
+                        <span class="nx">one</span> <span class="o">=</span> <span class="err">@</span><span class="nx">One</span><span class="p">(</span><span class="nx">select</span> <span class="o">=</span> <span class="s2">&#34;com.kingboy.repository.address.AddressRepository.findAddressById&#34;</span><span class="p">))</span>
+        <span class="p">})</span>
+        <span class="nx">User</span> <span class="nx">findUserWithAddress</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用@Resutl注解对返回的结果进行配置</p>
+<p>property=&ldquo;address&rdquo;,表示要将返回的查询结果赋值给user的address属性</p>
+<p>column=&ldquo;address_id&quot;是指将user表中的address_id作为com.kingboy.repository.address.AddressRepository.findAddressById的查询参数</p>
+<p>one表示这是一个一对一的查询</p>
+<p>@One(select=&ldquo;方法全路径&rdquo;)表示我们调用的方法</p>
+<h2 id="5-一对多查询">5 一对多查询</h2>
+<p>以获取用户拥有的所有车car为例，首先我们定义一个根据用户id查询车的查询方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="kr">public</span> <span class="kr">interface</span> <span class="nx">CarRepository</span> <span class="p">{</span>
+        <span class="cm">/**
+</span><span class="cm">         * 根据用户id查询所有的车
+</span><span class="cm">         */</span>
+        <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `car` WHERE user_id = #{userId}&#34;</span><span class="p">)</span>
+        <span class="nx">List</span><span class="o">&lt;</span><span class="nx">Car</span><span class="o">&gt;</span> <span class="nx">findCarByUserId</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">userId</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们定义一个根据用户id查询用户的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="kr">public</span> <span class="kr">interface</span> <span class="nx">UserRepository</span> <span class="p">{</span>
+        <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `user` where id = #{id}&#34;</span><span class="p">)</span>
+        <span class="nx">User</span> <span class="nx">findUserWithAddress</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个时候我们查询出来的user对象中的List属性是空的，和car的查询方法并没有任何关联。
+那么我们要把user中的用户id传递给CarRepository的查询车的方法，
+然后把查询出的集合对象List赋值给user的cars属性,那么我们怎么做呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">public</span> <span class="kr">interface</span> <span class="nx">UserRepository</span> <span class="p">{</span>
+    <span class="cm">/**
+</span><span class="cm">     * 查询带有车信息的用户===============演示一对多(关于多对多其实就是两个一对多组成)
+</span><span class="cm">     */</span>
+    <span class="err">@</span><span class="nx">Select</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `user` WHERE id = #{id}&#34;</span><span class="p">)</span>
+    <span class="err">@</span><span class="nx">Results</span><span class="p">({</span>
+            <span class="err">@</span><span class="nx">Result</span><span class="p">(</span><span class="nx">property</span> <span class="o">=</span> <span class="s2">&#34;cars&#34;</span><span class="p">,</span> <span class="nx">column</span> <span class="o">=</span> <span class="s2">&#34;id&#34;</span><span class="p">,</span>
+                    <span class="nx">many</span> <span class="o">=</span> <span class="err">@</span><span class="nx">Many</span><span class="p">(</span><span class="nx">select</span> <span class="o">=</span> <span class="s2">&#34;com.kingboy.repository.car.CarRepository.findCarByUserId&#34;</span><span class="p">))</span>
+    <span class="p">})</span>
+    <span class="nx">User</span> <span class="nx">getUserWithCar</span><span class="p">(</span><span class="nx">Long</span> <span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们要使用@Resutl注解对返回的结果进行配置</p>
+<p>property = “cars”, 表示要将返回的查询结果赋值给user的cars属性</p>
+<p>column = “id” 是指将user表中的用户主键id作为com.kingboy.repository.address.CarRepository.findCarByUserId的查询参数</p>
+<p>many 表示这是一个一对多的查询</p>
+<p>@Many(select = &ldquo;方法全路径) 表示我们调用的方法, 方法参数userId就是上面column指定的列值</p>
+<h2 id="5-总结">5 总结</h2>
+<p>首先我们统一下概念：查询Address或Car的方法，接下来统称为User的附属查询。</p>
+<p>共同点：</p>
+<p>①无论是一对一还是一对多，都是通过附属查询来实现的，我们需要定义这个附属查询方法。</p>
+<p>②在主查询方法中通过@One、@Many指定附属查询方法的全路径。</p>
+<p>③都通过column来传递参数给附属方法。</p>
+<p>不同点：</p>
+<p>①一对一，那么附属方法返回的是一个单独的对象</p>
+<p>②一对多，那么附属方法返回的是一个对象集合</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-12-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" data-title="Mybatis注解实现一对一和一对多查询" data-hashtags="Mybatis"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" data-hashtag="Mybatis"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" data-title="Mybatis注解实现一对一和一对多查询"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" data-title="Mybatis注解实现一对一和一对多查询"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" data-title="Mybatis注解实现一对一和一对多查询"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mybatis/">Mybatis</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" class="prev" rel="prev" title="Oracle去除某一列值重复的数据"><i class="fas fa-angle-left fa-fw"></i>Oracle去除某一列值重复的数据</a>
+            <a href="/%E4%B8%80%E6%AC%A1%E7%9C%8B%E6%87%82less/" class="next" rel="next" title="less简单入门">less简单入门<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

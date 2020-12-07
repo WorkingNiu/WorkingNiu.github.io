@@ -1,25 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java on WorkingCoder的博客</title>
-    <link>https://WorkingNiu.github.io/tags/java/</link>
-    <description>Recent content in Java on WorkingCoder的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 29 May 2019 15:01:12 +0800</lastBuildDate>
-    
-	<atom:link href="https://WorkingNiu.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>JDK各个版本新特性整理</title>
-      <link>https://WorkingNiu.github.io/2019/05/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/</link>
-      <pubDate>Wed, 29 May 2019 15:01:12 +0800</pubDate>
-      
-      <guid>https://WorkingNiu.github.io/2019/05/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/</guid>
-      <description>&lt;p&gt;学习整理笔记&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - 标签 - 梁仲乾的博客</title>
+        <link>https://example.com/tags/java/</link>
+        <description>Java - 标签 - 梁仲乾的博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 May 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>JDK各个版本新特性整理</title>
+    <link>https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/</link>
+    <pubDate>Wed, 29 May 2019 15:01:12 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://example.com/jdk%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86/</guid>
+    <description><![CDATA[<p>学习整理笔记</p>]]></description>
+</item></channel>
 </rss>

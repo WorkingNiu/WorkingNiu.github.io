@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Oracle去除某一列值重复的数据 - 梁仲乾的博客</title><meta name="Description" content="梁仲乾的博客"><meta property="og:title" content="Oracle去除某一列值重复的数据" />
+<meta property="og:description" content="业务中去除一些无法避免的脏数据" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" />
+<meta property="og:image" content="https://example.com/logo.png"/>
+<meta property="article:published_time" content="2019-12-29T15:01:12+08:00" />
+<meta property="article:modified_time" content="2019-12-29T15:01:12+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/logo.png"/>
+
+<meta name="twitter:title" content="Oracle去除某一列值重复的数据"/>
+<meta name="twitter:description" content="业务中去除一些无法避免的脏数据"/>
+<meta name="application-name" content="梁仲乾的博客">
+<meta name="apple-mobile-web-app-title" content="梁仲乾的博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" /><link rel="prev" href="https://example.com/post%E5%88%B0%E5%BA%95%E5%92%8Cget%E6%9C%89%E5%95%A5%E5%8C%BA%E5%88%AB/" /><link rel="next" href="https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Oracle去除某一列值重复的数据",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/example.com\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "Oracle","wordcount":  795 ,
+        "url": "https:\/\/example.com\/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE\/","datePublished": "2019-12-29T15:01:12+08:00","dateModified": "2019-12-29T15:01:12+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "梁仲乾","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/example.com\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts"> 所有文章 </a><a class="menu-item" href="/tags"> 标签 </a><a class="menu-item" href="/categories"> 分类 </a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="梁仲乾的博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>梁仲乾的博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts" title="">所有文章</a><a class="menu-item" href="/tags" title="">标签</a><a class="menu-item" href="/categories" title="">分类</a><a class="menu-item" href="https://github.com/WorkingNiu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Oracle去除某一列值重复的数据</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>xxxx</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/"><i class="far fa-folder fa-fw"></i>后端技术</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-29">2019-12-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 795 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-问题">1 问题</a></li>
+    <li><a href="#2-解决思路">2 解决思路</a></li>
+    <li><a href="#3-解决过程">3 解决过程</a>
+      <ul>
+        <li><a href="#查看表中的重复记录">查看表中的重复记录</a></li>
+        <li><a href="#标记重复的记录">标记重复的记录</a></li>
+        <li><a href="#过滤重复数据">过滤重复数据</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>业务中去除一些无法避免的脏数据</p>
+<h2 id="1-问题">1 问题</h2>
+<p>在项目中有一张设备检测信息表DEVICE_INFO_TBL, 每个设备每天都会产生一条检测信息，现在需要从该表中检索出每个设备的最新检测信息。也就是device_id字段不能重复，消除device_id字段重复的记录，而且device_id对应的检测信息test_result是最新的。</p>
+<h2 id="2-解决思路">2 解决思路</h2>
+<p>用Oracle的row_number() over函数来解决该问题。</p>
+<h2 id="3-解决过程">3 解决过程</h2>
+<h3 id="查看表中的重复记录">查看表中的重复记录</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">device_id</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">update_dtm</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">test_result</span>
+<span class="k">from</span> <span class="n">DEVICE_INFO_TBL</span> <span class="n">t</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>查询结果</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>update_dtm</th>
+<th>test_result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>21</td>
+<td>2019-4-3</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>2</td>
+<td>21</td>
+<td>2019-4-4</td>
+<td>异常</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>2019-4-3</td>
+<td>警告</td>
+</tr>
+<tr>
+<td>4</td>
+<td>22</td>
+<td>2019-4-4</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>5</td>
+<td>23</td>
+<td>2019-4-4</td>
+<td>异常</td>
+</tr>
+</tbody>
+</table>
+<h3 id="标记重复的记录">标记重复的记录</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">device_id</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">update_dtm</span><span class="p">,</span>
+    <span class="n">t</span><span class="p">.</span><span class="n">test_result</span><span class="p">,</span>
+    <span class="n">row_number</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">device_id</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">t</span><span class="p">.</span><span class="n">update_dtm</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">row_flg</span>   
+<span class="k">from</span> <span class="n">DEVICE_INFO_TBL</span> <span class="n">t</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>查询结果</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>update_dtm</th>
+<th>test_result</th>
+<th>row_flg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>21</td>
+<td>2019-4-3</td>
+<td>正常</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>21</td>
+<td>2019-4-4</td>
+<td>异常</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>2019-4-3</td>
+<td>警告</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>22</td>
+<td>2019-4-4</td>
+<td>正常</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>23</td>
+<td>2019-4-4</td>
+<td>异常</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="过滤重复数据">过滤重复数据</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span>
+    <span class="n">temp</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">temp</span><span class="p">.</span><span class="n">device_id</span><span class="p">,</span>
+    <span class="n">temp</span><span class="p">.</span><span class="n">update_dtm</span><span class="p">,</span>
+    <span class="n">temp</span><span class="p">.</span><span class="n">test_result</span>
+<span class="k">from</span> <span class="p">(</span>
+         <span class="k">select</span>
+             <span class="n">t</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+             <span class="n">t</span><span class="p">.</span><span class="n">device_id</span><span class="p">,</span>
+             <span class="n">t</span><span class="p">.</span><span class="n">update_dtm</span><span class="p">,</span>
+             <span class="n">t</span><span class="p">.</span><span class="n">test_result</span><span class="p">,</span>
+             <span class="n">row_number</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="n">PARTITION</span> <span class="k">BY</span> <span class="n">device_id</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">t</span><span class="p">.</span><span class="n">update_dtm</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">row_flg</span>   
+          <span class="k">from</span> <span class="n">DEVICE_INFO_TBL</span> <span class="n">t</span> <span class="p">)</span> <span class="n">temp</span>
+<span class="k">where</span> <span class="n">temp</span><span class="p">.</span><span class="n">row_flg</span>  <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>查询结果</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>device_id</th>
+<th>update_dtm</th>
+<th>test_result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>21</td>
+<td>2019-4-4</td>
+<td>异常</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>2019-4-3</td>
+<td>警告</td>
+</tr>
+<tr>
+<td>5</td>
+<td>23</td>
+<td>2019-4-4</td>
+<td>异常</td>
+</tr>
+</tbody>
+</table>
+<p>row_number() OVER (PARTITION BY COL1 ORDER BY COL2) 表示根据COL1分组，在分组内部根据 COL2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的).</p>
+<p>　　与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪列rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码．</p>
+<p>　　row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开时排序）．</p>
+<p>　　rank()是跳跃排序，有两个第二名时接下来就是第四名（同样是在各个分组内）．</p>
+<p>　　dense_rank()l是连续排序，有两个第二名时仍然跟着第三名。相比之下row_number是没有重复值的 ．</p>
+<p>　　lag（arg1,arg2,arg3):
+arg1是从其他行返回的表达式
+arg2是希望检索的当前行分区的偏移量。是一个正的偏移量，时一个往回检索以前的行的数目。
+arg3是在arg2表示的数目超出了分组的范围时返回的值.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-12-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" data-title="Oracle去除某一列值重复的数据" data-hashtags="Oracle"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" data-hashtag="Oracle"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" data-title="Oracle去除某一列值重复的数据"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" data-title="Oracle去除某一列值重复的数据"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/oracle%E5%8E%BB%E9%99%A4%E6%9F%90%E4%B8%80%E5%88%97%E5%80%BC%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE/" data-title="Oracle去除某一列值重复的数据"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/oracle/">Oracle</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/post%E5%88%B0%E5%BA%95%E5%92%8Cget%E6%9C%89%E5%95%A5%E5%8C%BA%E5%88%AB/" class="prev" rel="prev" title="post到底和get有啥区别"><i class="fas fa-angle-left fa-fw"></i>post到底和get有啥区别</a>
+            <a href="/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/" class="next" rel="next" title="Mybatis注解实现一对一和一对多查询">Mybatis注解实现一对一和一对多查询<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
