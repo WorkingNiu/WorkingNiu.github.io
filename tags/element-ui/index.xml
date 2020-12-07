@@ -3,7 +3,8 @@
         <title>Element-UI - 标签 - 梁仲乾的博客</title>
         <link>https://example.com/tags/element-ui/</link>
         <description>Element-UI - 标签 - 梁仲乾的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/element-ui/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>953456096@qq.com (梁仲乾)</managingEditor>
+            <webMaster>953456096@qq.com (梁仲乾)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/element-ui/" rel="self" type="application/rss+xml" /><item>
     <title>Element-UI响应式布局</title>
     <link>https://example.com/elementui%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</link>
     <pubDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</pubDate>

@@ -3,7 +3,8 @@
         <title>Redis - 标签 - 梁仲乾的博客</title>
         <link>https://example.com/tags/redis/</link>
         <description>Redis - 标签 - 梁仲乾的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/redis/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>953456096@qq.com (梁仲乾)</managingEditor>
+            <webMaster>953456096@qq.com (梁仲乾)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/redis/" rel="self" type="application/rss+xml" /><item>
     <title>Spring Boot整合Redis使用</title>
     <link>https://example.com/spring-boot-%E6%95%B4%E5%90%88redis%E4%BD%BF%E7%94%A8%E9%99%84%E5%B7%A5%E5%85%B7%E7%B1%BB/</link>
     <pubDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</pubDate>

@@ -3,7 +3,8 @@
         <title>后端技术 - 分类 - 梁仲乾的博客</title>
         <link>https://example.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/</link>
         <description>后端技术 - 分类 - 梁仲乾的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>953456096@qq.com (梁仲乾)</managingEditor>
+            <webMaster>953456096@qq.com (梁仲乾)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
     <title>Mybatis注解实现一对一和一对多查询</title>
     <link>https://example.com/mybatis%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E5%92%8C%E4%B8%80%E5%AF%B9%E5%A4%9A%E6%9F%A5%E8%AF%A2/</link>
     <pubDate>Sun, 29 Dec 2019 15:01:12 &#43;0800</pubDate>

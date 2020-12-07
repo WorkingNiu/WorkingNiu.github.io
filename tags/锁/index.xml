@@ -3,7 +3,8 @@
         <title>锁 - 标签 - 梁仲乾的博客</title>
         <link>https://example.com/tags/%E9%94%81/</link>
         <description>锁 - 标签 - 梁仲乾的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Jan 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E9%94%81/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>953456096@qq.com (梁仲乾)</managingEditor>
+            <webMaster>953456096@qq.com (梁仲乾)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 15 Jan 2019 15:01:12 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E9%94%81/" rel="self" type="application/rss+xml" /><item>
     <title>悲观锁和乐观锁</title>
     <link>https://example.com/%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81/</link>
     <pubDate>Tue, 15 Jan 2019 15:01:12 &#43;0800</pubDate>
